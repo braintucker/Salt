@@ -6,5 +6,5 @@
 </div>
 
 <ul>
-  <li *ngFor="let m of menu">{{ m.$value }}</li>
+  <li *ngFor="let m of menu | async">{{ m.$value }}</li>
 </ul>
