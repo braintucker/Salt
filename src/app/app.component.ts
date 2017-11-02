@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,22 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  food: FirebaseListObservable<any[]>;
-  restaurants: FirebaseListObservable<any[]>;
+  foods: FirebaseListObservable<any[]>;
+  restaurants: Observable<any[]>;
 
   constructor(private af: AngularFire){
   }
 
   ngOnInit() {
-    this.food = this.af.database.list('/food');
-    this.restaurants = this.af.database.list('/restaurants');
+    this.foods = this.af.database.list('/foods');
+
+    this.restaurants = this.af.database.list('/restaurants')
+      .map(restaurants => {
+        console.log("BEFORE MAP:", restaurants);
+        restaurants.map(restaurant => {
+          restaurant.foodType = this.af.database.object('/foods/' + restaurant.food)
+        });
+        return restaurants;
+      });
   }
 }
