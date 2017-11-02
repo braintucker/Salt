@@ -7,14 +7,14 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  types: FirebaseListObservable<any[]>;
+  food: FirebaseListObservable<any[]>;
   restaurants: FirebaseListObservable<any[]>;
 
   constructor(private af: AngularFire){
   }
 
   ngOnInit() {
-    this.types = this.af.database.list('/types');
+    this.food = this.af.database.list('/food');
     this.restaurants = this.af.database.list('/restaurants');
   }
 }
