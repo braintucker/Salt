@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +7,14 @@ import { AngularFire } from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  menu;
-  restaurant;
+  types: FirebaseListObservable<any[]>;
+  restaurants: FirebaseListObservable<any[]>;
 
-  constructor(private af: AngularFire) {
-
+  constructor(private af: AngularFire){
   }
 
   ngOnInit() {
-    this.menu = this.af.database.list('/menu');
-    this.restaurant = this.af.database
-      .object('/restaurant');
+    this.types = this.af.database.list('/types');
+    this.restaurants = this.af.database.list('/restaurants');
   }
 }
