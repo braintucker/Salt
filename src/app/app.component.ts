@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  menu;
+
+  constructor(af: AngularFire) {
+      af.database.list('/menu').subscribe(x => {
+        this.menu = x;
+        console.log(this.menu);
+      })
+  }
+
 }
