@@ -20,9 +20,10 @@ export class AppComponent {
 
     this.restaurants = this.af.database.list('/restaurants')
       .map(restaurants => {
-        console.log("BEFORE MAP:", restaurants);
         restaurants.map(restaurant => {
-          restaurant.foodType = this.af.database.object('/foods/' + restaurant.food)
+          restaurant.featureTypes = [];
+          for (var f in restaurant.features)
+            restaurant.featureTypes.push(this.af.database.object('/features/' + f));
         });
         return restaurants;
       });
