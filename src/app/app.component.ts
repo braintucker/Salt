@@ -38,25 +38,11 @@ export class AppComponent {
         return restaurants;
       });
 
-    this.af.auth.subscribe(authState => {
-      if(!authState)
-        console.log("NOT LOGGED IN");
-      else
-        console.log("LOGGED IN", authState);
-    });
-  }
-
-  login() {
-    this.af.auth.login({
-      provider: AuthProviders.Facebook,
-      method: AuthMethods.Popup
-    }).then(authState => {
-      console.log("AFTER LOGIN:", authState)
-    }).catch((err) => {
-      console.log("ERROR:", err);
-    })
-  }
-  logout() {
-    this.af.auth.logout();
+    // this.af.auth.subscribe(authState => {
+    //   if(!authState)
+    //     console.log("NOT LOGGED IN");
+    //   else
+    //     console.log("LOGGED IN", authState);
+    // });
   }
 }

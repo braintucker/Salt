@@ -1,15 +1,13 @@
 <div class="panel panel-default">
-  <div class="panel-body">
-    <h1>Test Facebook Login</h1>
-    <button (click)="login()">Login</button>
-    <button (click)="logout()">Logout</button>
+  <div class="panel-heading">
+    <h1>HEADER</h1>
   </div>
 </div>
 
 <div class="panel panel-default">
   <h1>Food Types</h1>
   <ul class="list-group">
-    <li class="list-group-item list-group-item-success" *ngFor="let f of foods | async">{{ f.$key + '- ' + f.$value }}</li>
+    <li class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</li>
   </ul>
 </div>
 

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { FbLogin } from './fb-login.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyA_GX29gvNxI_UqNKOgJAAGonlx7mRTQs4",
@@ -15,13 +16,13 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, FbLogin
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FbLogin]
 })
 export class AppModule { }
