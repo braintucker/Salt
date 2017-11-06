@@ -1,15 +1,28 @@
-<h1>Food Types</h1>
-<ul>
-  <li *ngFor="let f of foods | async">{{ f.$key + '- ' + f.$value }}</li>
-</ul>
-<h1>Restaurant Options</h1>
-<ul>
-  <li *ngFor="let r of restaurants | async">
-    {{ r.name }}
-    <ul>
-      <li *ngFor="let f of r.featureTypes">
-        {{ (f | async)?.$value }}
-      </li>
-    </ul>
-  </li>
-</ul>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h1>Test Facebook Login</h1>
+    <button (click)="login()">Login</button>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <h1>Food Types</h1>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-success" *ngFor="let f of foods | async">{{ f.$key + '- ' + f.$value }}</li>
+  </ul>
+</div>
+
+<div class="panel panel-default">
+  <h1>Restaurant Options</h1>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let r of restaurants | async">
+      {{ r.name }}
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let f of r.featureTypes">
+          {{ (f | async)?.$value }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
