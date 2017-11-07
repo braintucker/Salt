@@ -37,12 +37,5 @@ export class AppComponent {
         });
         return restaurants;
       });
-
-    // this.af.auth.subscribe(authState => {
-    //   if(!authState)
-    //     console.log("NOT LOGGED IN");
-    //   else
-    //     console.log("LOGGED IN", authState);
-    // });
   }
 }
