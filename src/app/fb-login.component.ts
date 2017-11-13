@@ -19,24 +19,31 @@ export class FbLogin implements OnInit {
   ngOnInit() {
     this.af.auth.subscribe(authState => {
       if(!authState) {
-        console.log("NOT LOGGED IN");
+        console.log("NOT LOGGED IN", authState);
         this.displayName = null;
         this.photoURL = null;
         return
       }
-        //console.log("LOGGED IN && AUTHSTATE:", authState);
+        //create conditional checking if facebook uid exist, throwing error becuase that
+        //value doens't exist and it tries to assign url value with null value of
+        //authState.facebook.uid
+        console.log("LOGGED IN && AUTHSTATE:", authState);
         let userRef = this.af.database.object('/users/' + authState.uid);
         userRef.subscribe(user => {
-          let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
-          this.http.get(url).subscribe(response => {
-            let user = response.json();
-            //updating the user object to have first_name and last_name properties when logged in
-            userRef.update({
-              firstName: user.first_name,
-              last_name: user.last_name
+
+            let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
+            this.http.get(url).subscribe(response => {
+              let user = response.json();
+              //updating the user object to have first_name and last_name properties when logged in
+              userRef.update({
+                firstName: user.first_name,
+                last_name: user.last_name
+              });
             });
-          });
         });
+
+        if(authState.facebook.uid){
+          console.log("FACEBOOK UID EXISTS and this happens before the login()'s .then()'", authState)}
 
 
         this.displayName = authState.auth.displayName;
@@ -45,14 +52,35 @@ export class FbLogin implements OnInit {
     });
   }
 
+  console() {
+    this.af.auth.subscribe( authState => {
+      console.log("This is the current authState:", authState);
+    })
+
+  }
+
+  register() {
+    this.af.auth.createUser({
+      email: 'brian.briantucker@gmail.com',
+      password: 'tester123!'
+    })
+    .then(authState =>
+      console.log("REGISTER-THEN", authState))
+      //authState.auth.sendEmailVerification()
+    .catch(error => console.log("REGISTER-ERROR", error));
+  }
+
+
   login() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
       method: AuthMethods.Popup,
       scope: ['public_profile', 'user_friends']
     }).then((authState: any) => {
-      //console.log("AFTER LOGIN:", authState);
-      
+      //after logging in, the uid is removed and an accessToken is added
+      if(!authState.facebook.uid){
+        console.log("FACEBOOK UID DOESN'T EXIST")}
+        console.log("AFTER LOGIN:", authState);
       //creating a user in the firebase database with the users
       //first_name & last_name, along with their access_token
       this.af.database.object('/users/' + authState.uid).update({

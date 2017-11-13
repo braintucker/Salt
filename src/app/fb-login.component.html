@@ -1,11 +1,18 @@
-
-
 <div class="panel panel-default">
-  <h1>Test Facebook Login</h1>
-  <h3>Hello {{ displayName }}</h3>
+  <h1>Hello {{ displayName }}</h1>
   <img *ngIf="photoURL" src="{{ photoURL }}" alt="">
   <div class="panel-body">
     <button (click)="login()">Login</button>
     <button (click)="logout()">Logout</button>
+    <button (click)="console()">Console</button>
+  </div>
+  <div>
+    Don't have an account? Register below
+  </div>
+  <div>
+    <input type="email" name="email" value="Enter Email">
+    <input type="password" name="password" value="Enter Password">
+    <!-- <input type="password" name="" value="password validation"> -->
+    <button (click)="register()">Register</button>
   </div>
 </div>
