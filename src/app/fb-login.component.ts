@@ -29,18 +29,24 @@ export class FbLogin implements OnInit {
         //authState.facebook.uid
         console.log("LOGGED IN && AUTHSTATE:", authState);
         let userRef = this.af.database.object('/users/' + authState.uid);
-        userRef.subscribe(user => {
 
-            let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
-            this.http.get(url).subscribe(response => {
-              let user = response.json();
-              //updating the user object to have first_name and last_name properties when logged in
-              userRef.update({
-                firstName: user.first_name,
-                last_name: user.last_name
+        if(authState.facebook){
+          let userId = authState.facebook.uid;
+          console.log("USER ID EXIST AND IS", authState.facebook.uid);
+
+          userRef.subscribe(user => {              
+              let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
+
+              this.http.get(url).subscribe(response => {
+                let user = response.json();
+                //updating the user object to have first_name and last_name properties when logged in
+                userRef.update({
+                  firstName: user.first_name,
+                  last_name: user.last_name
+                });
               });
             });
-        });
+          }
 
         if(authState.facebook.uid){
           console.log("FACEBOOK UID EXISTS and this happens before the login()'s .then()'", authState)}
