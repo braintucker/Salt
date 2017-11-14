@@ -11,6 +11,7 @@ import { Http } from '@angular/http';
 export class FbLogin implements OnInit {
   displayName;
   photoURL;
+  onFb = false;
   constructor(private af: AngularFire, private http: Http){
   }
 
@@ -20,6 +21,7 @@ export class FbLogin implements OnInit {
     this.af.auth.subscribe(authState => {
       if(!authState) {
         console.log("NOT LOGGED IN", authState);
+        console.log("onFb", this.onFb);
         this.displayName = null;
         this.photoURL = null;
         return
@@ -28,6 +30,7 @@ export class FbLogin implements OnInit {
         //value doens't exist and it tries to assign url value with null value of
         //authState.facebook.uid
         console.log("LOGGED IN && AUTHSTATE:", authState);
+        console.log("onFb", this.onFb);
         let userRef = this.af.database.object('/users/' + authState.uid);
 
         if(authState.facebook){
@@ -67,7 +70,7 @@ export class FbLogin implements OnInit {
 
 
 
-  login() {
+  loginFb() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
       method: AuthMethods.Popup,
@@ -83,22 +86,38 @@ export class FbLogin implements OnInit {
         accessToken: authState.facebook.accessToken
       })
     });
+    this.onFb = true;
+  }
+
+  loginEmail() {
+    console.log("This will make input fields appear")
+    this.onFb = false;
   }
 
   logout() {
     this.af.auth.logout();
+    this.onFb = false;
   }
 
   register() {
+
+    if(this.onFb) {
+      console.log("Already logged with fb");
+      alert("Already logged with fb");
+      return
+    }
+
     this.af.auth.createUser({
       email: 'brian.briantucker@gmail.com',
       password: 'tester123!'
     })
-    .then(authState =>
-      console.log("REGISTER-THEN", authState))
+    .then(authState => {
+      console.log("REGISTER-THEN", authState)
       //authState.auth.sendEmailVerification()
-    .catch(error => console.log("REGISTER-ERROR", error));
+    })
+    .catch(error => {
+      console.log("REGISTER-ERROR", error);
+      alert("Account already registered");
+    });
   }
-  
-
 }

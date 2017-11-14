@@ -3,15 +3,22 @@
   <h2>{{ displayName }}</h2>
   <img *ngIf="photoURL" src="{{ photoURL }}" alt="">
   <div class="panel-body">
-    <button class="btn btn-primary" (click)="login()">Login</button>
+    <div class="panel">
+      <button  class="btn btn-primary" (click)="loginFb()">Facebook Login</button>
+      <button  class="btn btn-primary" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Email Login'}}</button>
+    </div>
+    <div *ngIf="show3" class="panel">
+      <label>Email</label>
+      <input   class="form-control" type="email" name="email" placeholder="Enter Password">
+      <label>Password</label>
+      <input   class="form-control" type="password" name="password" placeholder="Enter Password">
+    </div>
     <button class="btn btn-danger" (click)="logout()">Logout</button>
     <div class="panel">
-      <button class="btn btn-primary" (click)="show = !show">{{show ? 'Hide' : 'Show'}}</button>
+      <label>will delete this button later</label>
+      <button class="btn btn-info" (click)="console()">Console</button>
     </div>
-    <button *ngIf="show" (click)="showEmail()">Email</button>
-    <label>will delete this button later</label>
-    <button class="btn btn-info" (click)="console()">Console</button>
-  </div>
+    </div>
   <div>
     Don't have an account? Register below. Don't know if if matters though, because this isn't a real buisness
   </div>
