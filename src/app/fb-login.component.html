@@ -1,18 +1,29 @@
 <div class="panel panel-default">
-  <h1>Hello {{ displayName }}</h1>
+  <h1>Hello</h1>
+  <h2>{{ displayName }}</h2>
   <img *ngIf="photoURL" src="{{ photoURL }}" alt="">
   <div class="panel-body">
-    <button (click)="login()">Login</button>
-    <button (click)="logout()">Logout</button>
-    <button (click)="console()">Console</button>
+    <button class="btn btn-primary" (click)="login()">Login</button>
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+    <div class="panel">
+      <button class="btn btn-primary" (click)="show = !show">{{show ? 'Hide' : 'Show'}}</button>
+    </div>
+    <button *ngIf="show" (click)="showEmail()">Email</button>
+    <label>will delete this button later</label>
+    <button class="btn btn-info" (click)="console()">Console</button>
   </div>
   <div>
-    Don't have an account? Register below
+    Don't have an account? Register below. Don't know if if matters though, because this isn't a real buisness
   </div>
   <div>
-    <input type="email" name="email" value="Enter Email">
-    <input type="password" name="password" value="Enter Password">
+    <button (click)="show1 = !show1" class="btn btn-info">{{show1 ? 'Go Back' : 'Register'}}</button>
+    <div class="panel" *ngIf="show1">
+      <label>Email</label>
+      <input class="form-control" type="email" name="email" placeholder="Enter Email">
+      <label>Password</label>
+      <input class="form-control" type="password" name="password" placeholder="Enter Password">
+    </div>
     <!-- <input type="password" name="" value="password validation"> -->
-    <button (click)="register()">Register</button>
+    <button *ngIf="show1" class="btn btn-info"(click)="register()">Register</button>
   </div>
 </div>

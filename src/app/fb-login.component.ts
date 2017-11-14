@@ -34,7 +34,7 @@ export class FbLogin implements OnInit {
           let userId = authState.facebook.uid;
           console.log("USER ID EXIST AND IS", authState.facebook.uid);
 
-          userRef.subscribe(user => {              
+          userRef.subscribe(user => {
               let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
 
               this.http.get(url).subscribe(response => {
@@ -65,16 +65,6 @@ export class FbLogin implements OnInit {
 
   }
 
-  register() {
-    this.af.auth.createUser({
-      email: 'brian.briantucker@gmail.com',
-      password: 'tester123!'
-    })
-    .then(authState =>
-      console.log("REGISTER-THEN", authState))
-      //authState.auth.sendEmailVerification()
-    .catch(error => console.log("REGISTER-ERROR", error));
-  }
 
 
   login() {
@@ -98,4 +88,17 @@ export class FbLogin implements OnInit {
   logout() {
     this.af.auth.logout();
   }
+
+  register() {
+    this.af.auth.createUser({
+      email: 'brian.briantucker@gmail.com',
+      password: 'tester123!'
+    })
+    .then(authState =>
+      console.log("REGISTER-THEN", authState))
+      //authState.auth.sendEmailVerification()
+    .catch(error => console.log("REGISTER-ERROR", error));
+  }
+  
+
 }
