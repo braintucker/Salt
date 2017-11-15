@@ -5,11 +5,11 @@ import { Http } from '@angular/http';
 
 
 @Component({
-  selector: 'fb-login',
-  templateUrl: './fb-login.component.html',
-  styleUrls: ['./fb-login.component.css']
+  selector: 'login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class FbLogin implements OnInit {
+export class Login implements OnInit {
   email = '';
   password = '';
   displayName;
@@ -18,27 +18,23 @@ export class FbLogin implements OnInit {
   constructor(private af: AngularFire, private http: Http){
   }
 
-
   //get currently logged in user
   ngOnInit() {
     this.af.auth.subscribe(authState => {
       if(!authState) {
         console.log("NOT LOGGED IN", authState);
-        console.log("onFb", this.onFb);
+        //console.log("onFb", this.onFb);
         this.displayName = null;
         this.photoURL = null;
         return
       }
-        //create conditional checking if facebook uid exist, throwing error becuase that
-        //value doens't exist and it tries to assign url value with null value of
-        //authState.facebook.uid
-        console.log("LOGGED IN && AUTHSTATE:", authState);
-        console.log("onFb", this.onFb);
+        console.log("LOGGED IN", authState);
+        // console.log("onFb", this.onFb);
         let userRef = this.af.database.object('/users/' + authState.uid);
 
         if(authState.facebook){
           let userId = authState.facebook.uid;
-          console.log("USER ID EXIST AND IS", authState.facebook.uid);
+          //console.log("USER ID EXIST AND IS", authState.facebook.uid);
 
           userRef.subscribe(user => {
               let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
@@ -54,13 +50,8 @@ export class FbLogin implements OnInit {
             });
           }
 
-        if(authState.facebook.uid){
-          console.log("FACEBOOK UID EXISTS and this happens before the login()'s .then()'", authState)}
-
-
         this.displayName = authState.auth.displayName;
         this.photoURL = authState.auth.photoURL;
-
     });
   }
 
@@ -69,9 +60,7 @@ export class FbLogin implements OnInit {
     this.af.auth.subscribe( authState => {
       console.log("This is the current authState:", authState);
     })
-
   }
-
 
 
   loginFb() {
@@ -117,17 +106,13 @@ export class FbLogin implements OnInit {
       password: pswd
     })
     .then(authState => {
-      console.log("REGISTER-THEN", authState)
+      //console.log("REGISTER-THEN", authState)
       //authState.auth.sendEmailVerification()
     })
     .catch(error => {
       console.log("REGISTER-ERROR", error);
       alert(error);
     });
-    console.log('This holds the email:', this.email)
-    console.log('This holds the password', this.password)
-    console.log('MY BOOOOOOIIIII')
     form.resetForm();
   }
-
 }

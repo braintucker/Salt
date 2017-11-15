@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FbLogin } from './fb-login.component';
+import { Login } from './login.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyA_GX29gvNxI_UqNKOgJAAGonlx7mRTQs4",
@@ -18,7 +18,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, FbLogin
+    AppComponent, Login
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,6 @@ export const firebaseConfig = {
     FormsModule, HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent, FbLogin]
+  bootstrap: [AppComponent, Login]
 })
 export class AppModule { }
