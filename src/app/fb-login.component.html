@@ -23,9 +23,9 @@
     Don't have an account? Register below. Don't know if if matters though, because this isn't a real buisness
   </div>
 
-  <div>
+  <div class="panel-body">
     <button (click)="show1 = !show1" class="btn btn-info">{{show1 ? 'Go Back' : 'Register'}}</button>
-    <form class="panel" *ngIf="show1" (ngSubmit)="onSubmit(form)" novalidate #form="ngForm">
+    <form class="panel" *ngIf="show1" (ngSubmit)="register(form)" novalidate #form="ngForm">
       <div class="form-group">
         <label>Email</label>
         <input type="email" class="form-control" #emailField="ngModel"
@@ -40,7 +40,8 @@
         <p *ngIf="passwordField.touched && passwordField.invalid"
           class="alert alert-danger">Please enter a valid password</p>
       </div>
-      <button class="btn btn-info"(click)="register()">Register</button>
+      <button type="submit" class="btn btn-info"
+      [disabled]="form.invalid">Register</button>
     </form>
     <!-- <input type="password" name="" value="password validation"> -->
 

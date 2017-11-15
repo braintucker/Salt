@@ -10,6 +10,8 @@ import { Http } from '@angular/http';
   styleUrls: ['./fb-login.component.css']
 })
 export class FbLogin implements OnInit {
+  email = '';
+  password = '';
   displayName;
   photoURL;
   onFb = false;
@@ -65,7 +67,7 @@ export class FbLogin implements OnInit {
   console() {
     //why does this still carry the uid, when after-login contains the accessToken?
     this.af.auth.subscribe( authState => {
-      console.log("This is the current authState:", authState.facebook.uid);
+      console.log("This is the current authState:", authState);
     })
 
   }
@@ -101,17 +103,18 @@ export class FbLogin implements OnInit {
     this.onFb = false;
   }
 
-  register() {
-
+  register(form: NgForm) {
     if(this.onFb) {
       console.log("Already logged with fb");
       alert("Already logged with fb");
+      form.resetForm();
       return
     }
-
+    let em = this.email;
+    let pswd = this.password;
     this.af.auth.createUser({
-      email: 'brian.briantucker@gmail.com',
-      password: 'tester123!'
+      email: em,
+      password: pswd
     })
     .then(authState => {
       console.log("REGISTER-THEN", authState)
@@ -119,7 +122,12 @@ export class FbLogin implements OnInit {
     })
     .catch(error => {
       console.log("REGISTER-ERROR", error);
-      alert("Account already registered");
+      alert(error);
     });
+    console.log('This holds the email:', this.email)
+    console.log('This holds the password', this.password)
+    console.log('MY BOOOOOOIIIII')
+    form.resetForm();
   }
+
 }
