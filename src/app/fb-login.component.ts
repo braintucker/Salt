@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Http } from '@angular/http';
 
@@ -62,8 +63,9 @@ export class FbLogin implements OnInit {
   }
 
   console() {
+    //why does this still carry the uid, when after-login contains the accessToken?
     this.af.auth.subscribe( authState => {
-      console.log("This is the current authState:", authState);
+      console.log("This is the current authState:", authState.facebook.uid);
     })
 
   }

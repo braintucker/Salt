@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { HttpModule } from '@angular/http'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FbLogin } from './fb-login.component';
@@ -21,7 +22,8 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig), HttpModule
+    AngularFireModule.initializeApp(firebaseConfig),
+    FormsModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent, FbLogin]
