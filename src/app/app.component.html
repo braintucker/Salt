@@ -1,21 +1,22 @@
-<login></login>
-<div class="panel panel-default">
-  <h1>Food Types</h1>
-  <select class="list-group">
-    <option class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</option>
-  </select>
-</div>
-
-<div class="panel panel-default">
-  <h1>Restaurant Options</h1>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let r of restaurants | async">
-      {{ r.name }}
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let f of r.featureTypes">
-          {{ (f | async)?.$value }}
-        </li>
-      </ul>
-    </li>
-  </ul>
+<div class="panel">
+  <login></login>
+  <div class="panel panel-default">
+    <h1>Food Types</h1>
+    <select class="list-group">
+      <option class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</option>
+    </select>
+  </div>
+  <!-- <div class="panel panel-default">
+    <h1>Restaurant Options</h1>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let r of restaurants | async">
+        {{ r.name }}
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let f of r.featureTypes">
+            {{ (f | async)?.$value }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div> -->
 </div>

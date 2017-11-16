@@ -10,12 +10,15 @@ import  'rxjs/add/operator/take'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private af: AngularFire){
+  }
+
+  private _opened: boolean = false;
   foods: FirebaseListObservable<any[]>;
   restaurants: Observable<any[]>;
   exists;
 
-  constructor(private af: AngularFire){
-  }
 
   ngOnInit() {
     this.foods = this.af.database.list('/foods', {

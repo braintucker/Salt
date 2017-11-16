@@ -4,8 +4,11 @@ import { AngularFireModule } from 'angularfire2';
 import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
 
+import { SidebarModule } from 'ng-sidebar';
+
 import { AppComponent } from './app.component';
 import { Login } from './login.component';
+import { Sidebar } from './sidebar.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyA_GX29gvNxI_UqNKOgJAAGonlx7mRTQs4",
@@ -18,14 +21,14 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, Login
+    AppComponent, Login, Sidebar
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    FormsModule, HttpModule
+    FormsModule, HttpModule, SidebarModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent, Login]
+  bootstrap: [AppComponent, Login, Sidebar]
 })
 export class AppModule { }

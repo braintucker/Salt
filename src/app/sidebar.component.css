@@ -1,0 +1,13 @@
+ng-sidebar-container{
+  height: 10vh;
+  background-color: #000000;
+}
+
+.sideBar{
+  position: relative;
+
+  left: 0px;
+  height: 100%;
+  width: 10%;
+
+}
