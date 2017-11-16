@@ -12,6 +12,7 @@ import { Http } from '@angular/http';
 export class Login implements OnInit {
   email = '';
   password = '';
+  err;
   displayName;
   photoURL;
   onFb = false;
@@ -82,9 +83,9 @@ export class Login implements OnInit {
     this.onFb = true;
   }
 
-  loginEmail() {
-    console.log("This will make input fields appear")
-    this.onFb = false;
+  login() {
+    this.onFb = false
+    console.log("Testing to see if login button works")
   }
 
   logout() {
@@ -111,7 +112,8 @@ export class Login implements OnInit {
     })
     .catch(error => {
       console.log("REGISTER-ERROR", error);
-      alert(error);
+      this.err = error;
+      console.log("err", this.err);
     });
     form.resetForm();
   }
