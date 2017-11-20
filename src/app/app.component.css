@@ -1,23 +1,35 @@
 .panel
 {
-  background-color: #D5D5D5;
   color: #000000;
   font-family: 'Poppins', sans-serif;
   padding: 5px;
   text-align: center;
 }
 .container-rel{
-  position: absolute;
+  background-color: #D5D5D5;
   height: 100vh;
+  position: absolute;
   width: 100vw;
+}
+.sidebar-cust{
+  background-color: #A9A9A9;
+  height: 100vh;
+  padding: 2em 1em;
 }
 ng-sidebar-container{
   height: 100vh;
-  /*background-color: #000000;*/
   position: absolute;
   z-index: 1;
 }
 .btn-cust{
-  margin-left: 3%;
-  margin-top: 2%;
+  margin-left: 2%;
+  margin-top: 1%;
+  position: absolute;
+}
+
+.side-content{
+  padding: 0 2em;
+}
+a{
+  display: block;
 }

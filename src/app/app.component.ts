@@ -15,6 +15,18 @@ export class AppComponent {
   }
 
   private _opened: boolean = false;
+  private _modeNum: number = 0;
+  private _positionNum: number = 0;
+  private _dock: boolean = false;
+  private _closeOnClickOutside: boolean = false;
+  private _closeOnClickBackdrop: boolean = false;
+  private _showBackdrop: boolean = false;
+  private _animate: boolean = true;
+  private _trapFocus: boolean = true;
+  private _autoFocus: boolean = true;
+  private _keyClose: boolean = false;
+  private _autoCollapseHeight: number = null;
+  private _autoCollapseWidth: number = null;
   foods: FirebaseListObservable<any[]>;
   restaurants: Observable<any[]>;
   exists;
@@ -43,5 +55,20 @@ export class AppComponent {
   }
   private _toggleSidebar() {
     this._opened = !this._opened;
+  }
+  private _onOpenStart(): void {
+    console.info('Sidebar opening');
+  }
+
+  private _onOpened(): void {
+    console.info('Sidebar opened');
+  }
+
+  private _onCloseStart(): void {
+    console.info('Sidebar closing');
+  }
+
+  private _onClosed(): void {
+    console.info('Sidebar closed');
   }
 }

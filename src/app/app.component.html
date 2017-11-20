@@ -1,5 +1,53 @@
 <div class="panel container-rel">
-  <!-- <sidebar></sidebar> -->
+  <ng-sidebar-container>
+      <ng-sidebar [(opened)]="_opened"
+        mode="over"
+        [autoCollapseHeight]="_autoCollapseHeight"
+        [autoCollapseWidth]="_autoCollapseWidth"
+        [closeOnClickOutside]="_closeOnClickOutside"
+        [closeOnClickBackdrop]="_closeOnClickBackdrop"
+        [showBackdrop]="_showBackdrop"
+        [animate]="_animate"
+        [trapFocus]="_trapFocus"
+        [autoFocus]="_autoFocus"
+        [ariaLabel]="'My sidebar'"
+        (onOpenStart)="_onOpenStart()"
+        (onOpened)="_onOpened()"
+        (onCloseStart)="_onCloseStart()"
+        (onClosed)="_onClosed()">
+        <div class="sidebar-cust">
+          <p>This is the sidebar, navigation links will go here</p>
+          <p>Sidebar content</p>
+          <a>Test1</a>
+          <a>Test2</a>
+          <a>Test3</a>
+          <a closeSidebar>Closes the sidebar</a>
+        </div>
+      </ng-sidebar>
+
+      <div ng-sidebar-content>
+          <header>
+            <div class="btn-cust">
+              <button (click)="_toggleSidebar()"
+                      class="demo-header__toggle btn btn-primary">Toggle sidebar</button>
+              <span>ng-sidebar</span>
+            </div>
+          </header>
+
+          <section class="side-content">
+            <div class="panel panel-body">
+                <login></login>
+                <div class="panel panel-default">
+                  <h1>Food Types</h1>
+                  <select class="list-group">
+                    <option class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</option>
+                  </select>
+                </div>
+            </div>
+          </section>
+      </div>
+  </ng-sidebar-container>
+
   <!-- <div class="panel panel-default">
     <h1>Restaurant Options</h1>
     <ul class="list-group">
@@ -14,32 +62,4 @@
     </ul>
   </div> -->
 
-
-  <ng-sidebar-container>
-      <ng-sidebar [(opened)]="_opened" mode="push" autoCollapseWidth=500>
-        <p>hey</p>
-        <p>Sidebar content</p>
-        <a closeSidebar>Closes the sidebar</a>
-        <a>Test1</a>
-        <a>Test2</a>
-        <a>Test3</a>
-      </ng-sidebar>
-      <div ng-sidebar-content>
-          <header class="demo-header">
-            <button (click)="_toggleSidebar()"
-                    class="demo-header__toggle btn btn-primary">Toggle sidebar</button>
-            <span>ng-sidebar</span>
-          </header>
-
-          <div class="panel panel-body">
-              <login></login>
-              <div class="panel panel-default">
-                <h1>Food Types</h1>
-                <select class="list-group">
-                  <option class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</option>
-                </select>
-              </div>
-          </div>
-      </div>
-  </ng-sidebar-container>
 </div>
