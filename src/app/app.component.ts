@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AnimationTransitionEvent } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -40,5 +40,8 @@ export class AppComponent {
         });
         return restaurants;
       });
+  }
+  private _toggleSidebar() {
+    this._opened = !this._opened;
   }
 }

@@ -6,3 +6,18 @@
   padding: 5px;
   text-align: center;
 }
+.container-rel{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+ng-sidebar-container{
+  height: 100vh;
+  /*background-color: #000000;*/
+  position: absolute;
+  z-index: 1;
+}
+.btn-cust{
+  margin-left: 3%;
+  margin-top: 2%;
+}

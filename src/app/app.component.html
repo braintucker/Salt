@@ -1,11 +1,5 @@
-<div class="panel">
-  <login></login>
-  <div class="panel panel-default">
-    <h1>Food Types</h1>
-    <select class="list-group">
-      <option class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</option>
-    </select>
-  </div>
+<div class="panel container-rel">
+  <!-- <sidebar></sidebar> -->
   <!-- <div class="panel panel-default">
     <h1>Restaurant Options</h1>
     <ul class="list-group">
@@ -19,4 +13,33 @@
       </li>
     </ul>
   </div> -->
+
+
+  <ng-sidebar-container>
+      <ng-sidebar [(opened)]="_opened" mode="push" autoCollapseWidth=500>
+        <p>hey</p>
+        <p>Sidebar content</p>
+        <a closeSidebar>Closes the sidebar</a>
+        <a>Test1</a>
+        <a>Test2</a>
+        <a>Test3</a>
+      </ng-sidebar>
+      <div ng-sidebar-content>
+          <header class="demo-header">
+            <button (click)="_toggleSidebar()"
+                    class="demo-header__toggle btn btn-primary">Toggle sidebar</button>
+            <span>ng-sidebar</span>
+          </header>
+
+          <div class="panel panel-body">
+              <login></login>
+              <div class="panel panel-default">
+                <h1>Food Types</h1>
+                <select class="list-group">
+                  <option class="list-group-item" *ngFor="let f of foods | async">{{ f.$value }}</option>
+                </select>
+              </div>
+          </div>
+      </div>
+  </ng-sidebar-container>
 </div>
