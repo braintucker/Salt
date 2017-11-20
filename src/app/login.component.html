@@ -1,13 +1,10 @@
 <div class="panel panel-default">
-  <h1>Hello</h1>
-  <h2>{{ displayName }}</h2>
   <img *ngIf="photoURL" src="{{ photoURL }}" alt="">
   <div class="panel-body">
     <div class="panel">
       <button  class="btn btn-primary" (click)="loginFb()">Facebook Login</button>
       <button  class="btn btn-primary" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Email Login'}}</button>
     </div>
-
     <form class="panel" *ngIf="show3" (ngSubmit)="login(form)" novalidate #form="ngForm">
       <div class="form-group">
         <label>Email</label>
@@ -27,7 +24,8 @@
       <button type="submit" class="btn btn-info"
       [disabled]="form.invalid">Login</button>
     </form>
-
+    <h1 *ngIf="photoURL">Hello</h1>
+    <h2>{{ displayName }}</h2>
     <button class="btn btn-danger" (click)="logout()">Logout</button>
   </div>
   <div>

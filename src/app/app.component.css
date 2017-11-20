@@ -1,3 +1,11 @@
+a{
+  display: block;
+}
+ng-sidebar-container{
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+}
 .panel
 {
   color: #000000;
@@ -8,7 +16,7 @@
 .container-rel{
   background-color: #D5D5D5;
   height: 100vh;
-  position: absolute;
+  position: relative;
   width: 100vw;
 }
 .sidebar-cust{
@@ -16,20 +24,38 @@
   height: 100vh;
   padding: 2em 1em;
 }
-ng-sidebar-container{
-  height: 100vh;
-  position: absolute;
-  z-index: 1;
-}
-.btn-cust{
-  margin-left: 2%;
-  margin-top: 1%;
-  position: absolute;
+.cust-header{
+  align-items: center;
+  background: #4484CE;
+  color: #fff;
+  display: flex;
+  height: 5vw;
+  padding: 1em;
+  width: 100vw;
 }
 
+.cust-header__toggle {
+    background: #D5D5D5;
+    border: 0.15rem solid #fff;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    font-size: 0;
+    height: 3rem;
+    margin-right: 1rem;
+    top: 50%;
+    width: 4rem;
+    /*&::after {
+      background: $white;
+      content: '';
+      height: 0.15rem;
+      left: 0;
+      margin-top: -0.075rem;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }*/
+  }
 .side-content{
   padding: 0 2em;
-}
-a{
-  display: block;
 }
