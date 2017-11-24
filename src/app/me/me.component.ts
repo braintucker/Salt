@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 
 
 @Component({
-  selector: 'Me',
+  selector: 'me',
   templateUrl: './me.component.html',
   styleUrls: ['./me.component.css']
 })

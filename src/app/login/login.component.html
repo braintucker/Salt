@@ -1,4 +1,5 @@
 <div class="panel panel-default">
+  <h1>Login or Register Below!</h1>
   <div class="panel-body">
     <form class="panel" *ngIf="show1" (ngSubmit)="register(form)" novalidate #form="ngForm">
       <div class="form-group">
@@ -59,10 +60,4 @@
   <div class="panel">
     <button class="btn btn-danger" (click)="logout()">Logout</button>
   </div>
-
-  <div>
-    Don't have an account? Register below. Don't know if if matters though, because this isn't a real buisness
-  </div>
-
-
 </div>

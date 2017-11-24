@@ -19,9 +19,10 @@
           <div class="panel panel-default panel2">
             <p>This is the sidebar, navigation links will go here</p>
             <p>Sidebar content</p>
-            <a>What am I learning</a>
-            <a>Who am I</a>
-            <a>My interests</a>
+            <a [routerLink]= "['/login']">Login</a>
+            <a [routerLink]= "['/me']">Who am I</a>
+            <a [routerLink]= "['/skills']">What am I learning</a>
+
             <a closeSidebar>Close</a>
           </div>
         </div>
@@ -39,9 +40,7 @@
 
           <section class="side-content">
             <div class="panel panel1 panel-body">
-                <!-- <Me></Me> -->
-                <Skills></Skills>
-                <!-- <login></login> -->
+                <router-outlet></router-outlet>
                 <!-- <div class="panel panel-default">
                   <h1>Food Types</h1>
                   <select class="list-group">

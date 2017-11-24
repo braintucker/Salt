@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { AngularFireModule } from 'angularfire2';
 import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
+import { routing } from './app.routing';
 
 import { SidebarModule } from 'ng-sidebar';
 
@@ -27,9 +29,9 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    FormsModule, HttpModule, SidebarModule.forRoot()
+    FormsModule, HttpModule, SidebarModule.forRoot(), routing
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent, Login, Me, Skills]
 })
 export class AppModule { }
