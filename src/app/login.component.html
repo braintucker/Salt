@@ -26,8 +26,8 @@
 
   <div *ngIf="show4" class="panel-body">
     <div class="panel">
-      <button  class="btn btn-primary" (click)="loginFb()">Facebook Login</button>
-      <button  class="btn btn-primary" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Email Login'}}</button>
+      <button  class="btn btn-primary" (click)="loginFb()">Login with Facebook</button>
+      <button  class="btn btn-primary" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Login with Email'}}</button>
     </div>
     <form class="panel" *ngIf="show3" (ngSubmit)="login(form)" novalidate #form="ngForm">
       <div class="form-group">

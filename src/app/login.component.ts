@@ -84,8 +84,16 @@ export class Login implements OnInit {
   }
 
   login() {
-    this.onFb = false
-    console.log("Testing to see if login button works")
+    this.onFb = false;
+    this.af.auth.login({
+      email: this.email,
+      password: this.password
+    }, {
+      method: AuthMethods.Password,
+      provider: AuthProviders.Password
+    })
+    .then(authState => console.log('LOGIN-THEN', authState))
+    .catch(error => console.log("LOGIN-ERROR", error));
   }
 
   logout() {
@@ -108,7 +116,7 @@ export class Login implements OnInit {
     })
     .then(authState => {
       //console.log("REGISTER-THEN", authState)
-      //authState.auth.sendEmailVerification()
+      authState.auth.sendEmailVerification();
     })
     .catch(error => {
       console.log("REGISTER-ERROR", error);

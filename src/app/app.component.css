@@ -1,3 +1,10 @@
+
+  /*COLORS:
+  background: #96858F;
+  background: #6D7993;
+  background: #9099A2;
+  background: #D5D5D5;*/
+  
 a{
   display: block;
 }
@@ -7,7 +14,7 @@ ng-sidebar-container{
   z-index: 1;
 }
 .panel1{
-  background-color: #A9A9A9;
+  background-color: #9099A2;
   margin-top: 10px;
 }
 .panel-default
@@ -31,7 +38,7 @@ ng-sidebar-container{
 }
 .cust-header{
   align-items: center;
-  background: #4484CE;
+  background: #9099A2;
   color: #fff;
   display: flex;
   height: 5vw;
