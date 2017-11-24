@@ -44,7 +44,9 @@
         <p *ngIf="passwordField.touched && passwordField.invalid"
           class="alert alert-danger">Please enter a valid password</p>
       </div>
-      <p>{{err}}</p>
+
+      <div *ngIf="err" class="alert alert-danger">{{err}}</div>
+
       <button type="submit" class="btn btn-info"
       [disabled]="form.invalid">Login</button>
     </form>

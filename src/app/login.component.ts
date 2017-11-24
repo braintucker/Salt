@@ -83,7 +83,7 @@ export class Login implements OnInit {
     this.onFb = true;
   }
 
-  login() {
+  login(form: NgForm) {
     this.onFb = false;
     this.af.auth.login({
       email: this.email,
@@ -93,7 +93,8 @@ export class Login implements OnInit {
       provider: AuthProviders.Password
     })
     .then(authState => console.log('LOGIN-THEN', authState))
-    .catch(error => console.log("LOGIN-ERROR", error));
+    .catch(error => this.err = error.message);
+    form.resetForm();
   }
 
   logout() {
@@ -120,8 +121,7 @@ export class Login implements OnInit {
     })
     .catch(error => {
       console.log("REGISTER-ERROR", error);
-      this.err = error;
-      console.log("err", this.err);
+      this.err = error.message;
     });
     form.resetForm();
   }
