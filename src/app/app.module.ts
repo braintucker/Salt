@@ -7,7 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { SidebarModule } from 'ng-sidebar';
 
 import { AppComponent } from './app.component';
-import { Login } from './login.component';
+import { Login } from './login/login.component';
+import { Me } from './me/me.component';
+import { Skills } from './skills/skills.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyA_GX29gvNxI_UqNKOgJAAGonlx7mRTQs4",
@@ -20,7 +22,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, Login
+    AppComponent, Login, Me, Skills
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,6 @@ export const firebaseConfig = {
     FormsModule, HttpModule, SidebarModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent, Login]
+  bootstrap: [AppComponent, Login, Me, Skills]
 })
 export class AppModule { }
