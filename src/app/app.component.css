@@ -6,8 +6,13 @@ ng-sidebar-container{
   position: absolute;
   z-index: 1;
 }
-.panel
+.panel1{
+  background-color: #A9A9A9;
+  margin-top: 10px;
+}
+.panel-default
 {
+  background-color: #D5D5D5;
   color: #000000;
   font-family: 'Poppins', sans-serif;
   padding: 5px;
