@@ -50,8 +50,8 @@
       <button type="submit" class="btn btn-info"
       [disabled]="form.invalid">Login</button>
     </form>
-    <div class="panel panel-fb">
-      <h1 *ngIf="photoURL">Hello</h1>
+    <div *ngIf="photoURL" class="panel panel-fb">
+      <h1>Hello</h1>
       <h2>{{ displayName }}</h2>
       <img *ngIf="photoURL" src="{{ photoURL }}" alt="">
     </div>

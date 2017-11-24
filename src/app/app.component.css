@@ -4,7 +4,7 @@
   background: #6D7993;
   background: #9099A2;
   background: #D5D5D5;*/
-  
+
 a{
   display: block;
 }
@@ -12,9 +12,10 @@ ng-sidebar-container{
   height: 100vh;
   position: absolute;
   z-index: 1;
+  background-color: #9099A2;
 }
 .panel1{
-  background-color: #9099A2;
+  background-color: #6D7993;
   margin-top: 10px;
 }
 .panel-default
@@ -32,13 +33,13 @@ ng-sidebar-container{
   width: 100vw;
 }
 .sidebar-cust{
-  background-color: #A9A9A9;
+  background-color: #6D7993;
   height: 100vh;
   padding: 2em 1em;
 }
 .cust-header{
   align-items: center;
-  background: #9099A2;
+  background: #6D7993;
   color: #fff;
   display: flex;
   height: 5vw;
