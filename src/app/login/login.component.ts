@@ -16,6 +16,7 @@ export class Login implements OnInit {
   displayName;
   photoURL;
   onFb = false;
+  loggedIn;
   constructor(private af: AngularFire, private http: Http){
   }
 
@@ -23,13 +24,17 @@ export class Login implements OnInit {
   ngOnInit() {
     this.af.auth.subscribe(authState => {
       if(!authState) {
-        console.log("NOT LOGGED IN", authState);
+        //console.log("NOT LOGGED IN", authState);
         //console.log("onFb", this.onFb);
         this.displayName = null;
         this.photoURL = null;
+        this.loggedIn = false;
+        console.log("Logged in?", this.loggedIn);
         return
       }
-        console.log("LOGGED IN", authState);
+        //console.log("LOGGED IN", authState);
+        this.loggedIn = true;
+        console.log("Logged in?", this.loggedIn);
         // console.log("onFb", this.onFb);
         let userRef = this.af.database.object('/users/' + authState.uid);
 
@@ -95,6 +100,7 @@ export class Login implements OnInit {
     .then(authState => console.log('LOGIN-THEN', authState))
     .catch(error => this.err = error.message);
     form.resetForm();
+    this.err = null;
   }
 
   logout() {
@@ -124,5 +130,6 @@ export class Login implements OnInit {
       this.err = error.message;
     });
     form.resetForm();
+    this.err = null;
   }
 }

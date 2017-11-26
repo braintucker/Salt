@@ -57,18 +57,18 @@ export class AppComponent {
     this._opened = !this._opened;
   }
   private _onOpenStart(): void {
-    console.info('Sidebar opening');
+    //console.info('Sidebar opening');
   }
 
   private _onOpened(): void {
-    console.info('Sidebar opened');
+    //console.info('Sidebar opened');
   }
 
   private _onCloseStart(): void {
-    console.info('Sidebar closing');
+    //console.info('Sidebar closing');
   }
 
   private _onClosed(): void {
-    console.info('Sidebar closed');
+    //console.info('Sidebar closed');
   }
 }
