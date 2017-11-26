@@ -1,3 +1,6 @@
+<div *ngIf="!loggedIn">
+  <h2>You must be logged in to view content</h2>
+</div>
 <div *ngIf="loggedIn" class="panel">
   <div class="panel panel-body">
     <h1>History</h1>
