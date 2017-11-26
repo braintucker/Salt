@@ -12,6 +12,8 @@ import { Http } from '@angular/http';
 export class Me implements OnInit {
 
   loggedIn;
+  displayName;
+  photoURL;
 
   constructor(private af: AngularFire, private http: Http){
   }
@@ -25,6 +27,7 @@ export class Me implements OnInit {
       }
         this.loggedIn = true;
         console.log("Logged in?", this.loggedIn);
+        console.log("Auth", authState.facebook);
     });
   }
 }

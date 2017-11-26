@@ -1,0 +1,23 @@
+.panel
+{
+  background-color: #D5D5D5;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+
+input.ng-dirty.ng-invalid
+{
+  border: solid red 2px;
+}
+input.ng-dirty.ng-valid
+{
+  border: solid green 2px; }
+.img-circle {
+  border-radius: 50%;
+}
+.profile-photo{
+  height: 20%;
+  width: 20%;
+}
