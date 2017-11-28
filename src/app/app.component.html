@@ -31,7 +31,14 @@
 
       <div ng-sidebar-content>
           <header id="wrapper" class="cust-header">
-            <h1 class="header-name">Brian Tucker</h1>
+
+            <div class="login-head">
+              <div class="login-pic">
+                <logged-in></logged-in>
+              </div>
+              <h1 class="header-name">Brian Tucker</h1>
+            </div>
+
             <div class="btn-cust">
               <div class="btn-cust2">
                 <button class="btn-color  btn-cust1"(click)="_toggleSidebar()">
@@ -41,7 +48,6 @@
                 </button>
               </div>
             </div>
-            <logged-in></logged-in>
           </header>
 
           <section class="side-content">

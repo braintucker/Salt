@@ -1,3 +1,10 @@
+
+.img-circle {
+  border-radius: 50%;
+  height: 25%;
+  position: relative;
+  width: 40%;
+}
 input.ng-dirty.ng-invalid
 {
   border: solid red 2px;
@@ -5,21 +12,4 @@ input.ng-dirty.ng-invalid
 input.ng-dirty.ng-valid
 {
   border: solid green 2px;
-}
-.panel1
-{
-  color: #000000;
-  font-family: 'Poppins', sans-serif;
-  float: right;
-  padding: 5px;
-  position: absolute;
-  text-align: center;
-  right: 0;
-  top: 0;
-}
-.img-circle {
-  border-radius: 50%;
-  height: 25%;
-  width: 40%;
-  position: relative;
 }

@@ -90,3 +90,15 @@ ng-sidebar-container{
   color: #D5D5D5;
   margin-right: 8px;
 }
+.login-head{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 300px;
+}
+.login-pic{
+  position: absolute;
+  left: 0;
+  margin-top: 6.5%;
+  margin-left: 5%;
+}
