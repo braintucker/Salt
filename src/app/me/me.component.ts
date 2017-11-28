@@ -19,15 +19,15 @@ export class Me implements OnInit {
   }
 
   ngOnInit() {
-    // this.af.auth.subscribe(authState => {
-    //   if(!authState || !this.loggedIn) {
-    //     console.log("Logged in??", this.loggedIn);
-    //     return
-    //   }
-    //     this.loggedIn = true;
-    //     console.log("Logged in?", this.loggedIn);
-    //     console.log("Auth", authState.facebook);
-    // });
-    console.log("What?", this.loggedIn);
+    this.af.auth.subscribe(authState => {
+      if(!authState) {
+        this.loggedIn = false;
+        console.log("Logged in?", this.loggedIn);
+        return
+      }
+        this.loggedIn = true;
+        console.log("Logged in?", this.loggedIn);
+        console.log("Auth", authState.facebook);
+    });
   }
 }
