@@ -52,12 +52,10 @@
       [disabled]="form.invalid">Login</button>
     </form>
     <div *ngIf="photoURL" class="panel panel-fb">
-      <h1>Hello</h1>
-      <h2>{{ displayName }}</h2>
-      <img *ngIf="photoURL" src="{{ photoURL }}" alt="">
+      <h1>Hello, {{ displayName }} you logged in using Facebook.</h1>
     </div>
   </div>
   <div class="panel">
     <button class="btn btn-danger" (click)="logout()">Logout</button>
-  </div>  
+  </div>
 </div>
