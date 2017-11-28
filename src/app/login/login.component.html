@@ -23,6 +23,10 @@
   </div>
   <button (click)="show1 = !show1" class="btn btn-info">{{show1 ? 'Go Back' : 'Register'}}</button>
   <button (click)="show4 = !show4" class="btn btn-info">{{show4 ? 'Go Back' : 'Login'}}</button>
+  <!-- <button (click)="dummy()" class="btn btn-info">Dummy Login</button>
+  <button (click)="test()" class="btn btn-info">test</button> -->
+
+
 
 
   <div *ngIf="show4" class="panel-body">
@@ -51,11 +55,14 @@
       <button type="submit" class="btn btn-info"
       [disabled]="form.invalid">Login</button>
     </form>
-    <div *ngIf="photoURL" class="panel panel-fb">
-      <h1>Hello, {{ displayName }} you logged in using Facebook.</h1>
-    </div>
   </div>
   <div class="panel">
     <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+  <div *ngIf="photoURL" class="panel panel-fb">
+    <h1>Hello, {{ displayName }} you logged in using Facebook.</h1>
+  </div>
+  <div *ngIf="loggedIn && !photoURL" class="panel panel-fb">
+      <h1>You are logged in!</h1>
   </div>
 </div>

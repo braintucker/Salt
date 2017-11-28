@@ -30,7 +30,6 @@ export class LoggedIn implements OnInit {
         this.displayName = null;
         this.photoURL = null;
         this.loggedIn = false;
-        console.log("Logged in????????????", this.loggedIn);
         return
       }
         //console.log("LOGGED IN", authState);

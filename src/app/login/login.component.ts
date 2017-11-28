@@ -68,6 +68,14 @@ export class Login implements OnInit {
     })
   }
 
+  dummy() {
+    this.loggedIn = true;
+    let authState = {};
+    console.log("Log?", this.loggedIn);
+  }
+  test() {
+    console.log("This is logged in", this.loggedIn);
+  }
 
   loginFb() {
     this.af.auth.login({
@@ -106,6 +114,7 @@ export class Login implements OnInit {
   logout() {
     this.af.auth.logout();
     this.onFb = false;
+    this.loggedIn = false;
   }
 
   register(form: NgForm) {
