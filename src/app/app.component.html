@@ -30,11 +30,16 @@
       </ng-sidebar>
 
       <div ng-sidebar-content>
-          <header class="cust-header">
+          <header id="wrapper" class="cust-header">
+            <h1 class="header-name">Brian Tucker</h1>
             <div class="btn-cust">
-              <button (click)="_toggleSidebar()"
-                      class="cust-header__toggle btn btn-primary">Toggle sidebar</button>
-              <span>Brian Tucker</span>
+              <div class="btn-cust2">
+                <button class="btn-color  btn-cust1"(click)="_toggleSidebar()">
+                  <div class="icon-bar"></div>
+                  <div class="icon-bar"></div>
+                  <div class="icon-bar"></div>
+                </button>
+              </div>
             </div>
             <logged-in></logged-in>
           </header>
