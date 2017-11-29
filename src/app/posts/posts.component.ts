@@ -12,7 +12,7 @@ import { Http } from '@angular/http';
 export class Posts implements OnInit {
 
   loggedIn;
-  
+
   constructor(private af: AngularFire, private http: Http){
   }
 
@@ -20,11 +20,11 @@ export class Posts implements OnInit {
     this.af.auth.subscribe(authState => {
       if(!authState) {
         this.loggedIn = false;
-        console.log("Logged in?", this.loggedIn);
+        console.log("Logged in with firebase?", this.loggedIn);
         return
       }
         this.loggedIn = true;
-        console.log("Logged in?", this.loggedIn);
+        console.log("Logged in with firebase?", this.loggedIn);
         console.log("Auth", authState.facebook);
     });
   }

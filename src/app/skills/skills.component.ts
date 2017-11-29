@@ -21,11 +21,11 @@ export class Skills implements OnInit {
     this.af.auth.subscribe(authState => {
       if(!authState) {
         this.loggedIn = false;
-        console.log("Logged in?", this.loggedIn);
+        console.log("Logged in with firebase?", this.loggedIn);
         return
       }
         this.loggedIn = true;
-        console.log("Logged in?", this.loggedIn);
+        console.log("Logged in with firebase?", this.loggedIn);
     });
   }
 }

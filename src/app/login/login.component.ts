@@ -29,12 +29,12 @@ export class Login implements OnInit {
         this.displayName = null;
         this.photoURL = null;
         this.loggedIn = false;
-        console.log("Logged in?", this.loggedIn);
+        console.log("Logged in with firebase?", this.loggedIn);
         return
       }
         //console.log("LOGGED IN", authState);
         this.loggedIn = true;
-        console.log("Logged in?", this.loggedIn);
+        console.log("Logged in with firebase?", this.loggedIn);
         // console.log("onFb", this.onFb);
         let userRef = this.af.database.object('/users/' + authState.uid);
 

@@ -1,31 +1,3 @@
-// import { Injectable } from '@angular/core';
-// import { tokenNotExpired } from 'angular2-jwt';
-//
-// declare var Auth0Lock: any;
-//
-// @Injectable()
-// export class Auth {
-//   lock = new Auth0Lock('f5b0p1JFkLXyPa7kNMsxaw2H27nJOdCw', 'braintuck.auth0.com', {});
-//
-//   constructor(){
-//     this.lock.on('authenticated', authResult => {
-//       localStorage.setItem('id_token', authResult.idToken);
-//     });
-//   }
-//
-//   public login() {
-//     this.lock.show();
-//   }
-//
-//   public isAuthenticated() {
-//     return tokenNotExpired();
-//   }
-//
-//   public logout() {
-//     localStorage.removeItem('id_token');
-//   }
-// }
-
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
