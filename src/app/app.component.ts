@@ -1,7 +1,7 @@
 import { Component, OnInit, AnimationTransitionEvent } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from './auth.service';
+import { Auth } from './auth.service';
 import 'rxjs/add/operator/map';
 import  'rxjs/add/operator/take'
 
@@ -12,7 +12,8 @@ import  'rxjs/add/operator/take'
 })
 export class AppComponent {
 
-  constructor(private af: AngularFire, private auth: AuthService){
+  constructor(private af: AngularFire, private auth: Auth){
+    auth.handleAuthentication();
   }
 
   private _opened: boolean = false;

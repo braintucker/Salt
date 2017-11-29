@@ -32,7 +32,7 @@ import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 
 @Injectable()
-export class AuthService {
+export class Auth {
 
   auth0 = new auth0.WebAuth({
     clientID: 'f5b0p1JFkLXyPa7kNMsxaw2H27nJOdCw',
@@ -47,7 +47,7 @@ export class AuthService {
 
   public login(): void {
     this.auth0.authorize();
-    console.log("This is the auth", auth0);
+    console.log("This is the auth", auth0.authResult);
   }
 
   // ...
