@@ -15,6 +15,10 @@ import { Me } from './me/me.component';
 import { Posts } from './posts/posts.component';
 import { Skills } from './skills/skills.component';
 
+import { AuthService } from './auth.service';
+// import { AUTH_PROVIDERS } from 'angular2-jwt';
+
+
 export const firebaseConfig = {
     apiKey: "AIzaSyA_GX29gvNxI_UqNKOgJAAGonlx7mRTQs4",
     authDomain: "salt-dd59b.firebaseapp.com",
@@ -33,7 +37,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule, HttpModule, SidebarModule.forRoot(), routing
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [AuthService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent, LoggedIn, Login, Me, Posts, Skills]
 })
 export class AppModule { }
