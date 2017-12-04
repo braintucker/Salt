@@ -11,7 +11,12 @@
           </div>
     </article>
   </div>
-  <div class="panel panel-body">
-    <textarea class="form-control input-cust" type="text" placeholder="Enter blog post(This should only show up for admin user)"></textarea>
-  </div>
+  
+  <form>
+    <label>Blog Entry</label>
+    <textarea #postEntry class="form-control input-cust" type="text"> </textarea>
+
+    <button (click)="submit(postEntry.value)" type="submit">Submit</button>
+
+  </form>
 </div>

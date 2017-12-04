@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Http } from '@angular/http';
@@ -17,6 +17,7 @@ export class Posts implements OnInit {
   loggedIn;
   articles;
   exists;
+  input = (<HTMLInputElement>document.getElementById("post"));
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
 
@@ -33,12 +34,15 @@ export class Posts implements OnInit {
         this.loggedIn = false;
         console.log("Logged in with firebase?", this.loggedIn);
         console.log("Logged in with auth0?", this.auth.isAuthenticated());
-
         return
       }
         this.loggedIn = true;
         console.log("Logged in with firebase?", this.loggedIn);
         console.log("Logged in with auth0?", this.auth.isAuthenticated());
     });
+  }
+
+  submit(post:string) {
+    console.log(post);
   }
 }
