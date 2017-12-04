@@ -4,14 +4,14 @@
 
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
   <div class="post-cont">
-    <article class="article-cust">
-      <h1>This is where the date for the post will go.</h1>
-      <p>Each article post will need to have a title, date,
-         and post property. Retrieved from firebase. Personal notes, remove later.</p>
-      <p>This is where the blog posts will go</p>
+    <article *ngFor="let a of articles" class="article-cust">
+          <div>
+            <h1>{{ a.title }}</h1>
+            <p>{{ a.post }}</p>
+          </div>
     </article>
   </div>
-  <div>
-    <textarea class="form-control input-cust" type="text" placeholder="Enter blog post"></textarea>
+  <div class="panel panel-body">
+    <textarea class="form-control input-cust" type="text" placeholder="Enter blog post(This should only show up for admin user)"></textarea>
   </div>
 </div>

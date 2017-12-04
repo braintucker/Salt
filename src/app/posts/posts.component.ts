@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Http } from '@angular/http';
 import { Auth } from '../auth.service';
+import 'rxjs/add/operator/map';
+import  'rxjs/add/operator/take'
 
 @Component({
   selector: 'posts',
@@ -12,8 +15,16 @@ import { Auth } from '../auth.service';
 export class Posts implements OnInit {
 
   loggedIn;
+  articles;
+  exists;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
+
+    af.database.list('/articles').subscribe( x => {
+      this.articles = x;
+      console.log("This is articles: ", this.articles);
+    });
+
   }
 
   ngOnInit() {
