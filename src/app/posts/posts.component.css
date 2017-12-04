@@ -3,9 +3,21 @@
   background: #6D7993;
   background: #9099A2;
   background: #D5D5D5;*/
+  .article-cust{
+    background: #D5D5D5;
+  }
   .panel{
     background-color: #6D7993;
   }
   .panel-body{
     background-color: #D5D5D5;
+  }
+  .input-cust{
+    height: 200px;
+  }
+  .post-cont{
+    background: #96858F;
+    border-radius: 5px;
+    height: 40vh;
+    overflow: auto;
   }

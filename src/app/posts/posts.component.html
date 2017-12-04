@@ -3,10 +3,15 @@
 </div>
 
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
-  <div>
-    This is for the post content, needs to have date timestamped.
+  <div class="post-cont">
+    <article class="article-cust">
+      <h1>This is where the date for the post will go.</h1>
+      <p>Each article post will need to have a title, date,
+         and post property. Retrieved from firebase. Personal notes, remove later.</p>
+      <p>This is where the blog posts will go</p>
+    </article>
   </div>
   <div>
-    This is input field where only my account will be allowed to enter blog posts. Won't be visible for anyone else.
+    <textarea class="form-control input-cust" type="text" placeholder="Enter blog post"></textarea>
   </div>
 </div>
