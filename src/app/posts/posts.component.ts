@@ -21,11 +21,13 @@ export class Posts implements OnInit {
       if(!authState) {
         this.loggedIn = false;
         console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
+
         return
       }
         this.loggedIn = true;
         console.log("Logged in with firebase?", this.loggedIn);
-        console.log("Auth", authState.facebook);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
     });
   }
 }

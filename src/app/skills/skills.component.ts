@@ -13,6 +13,7 @@ import { Auth } from '../auth.service';
 export class Skills implements OnInit {
 
   loggedIn;
+  logAuth;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
@@ -22,10 +23,13 @@ export class Skills implements OnInit {
       if(!authState) {
         this.loggedIn = false;
         console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
         return
       }
+
         this.loggedIn = true;
         console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
     });
   }
 }

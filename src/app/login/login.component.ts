@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Http } from '@angular/http';
+import { Auth } from '../auth.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class Login implements OnInit {
   photoURL;
   onFb = false;
   loggedIn;
-  constructor(private af: AngularFire, private http: Http){
+  constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
 
   //get currently logged in user
@@ -30,11 +31,13 @@ export class Login implements OnInit {
         this.photoURL = null;
         this.loggedIn = false;
         console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
         return
       }
         //console.log("LOGGED IN", authState);
         this.loggedIn = true;
         console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
         // console.log("onFb", this.onFb);
         let userRef = this.af.database.object('/users/' + authState.uid);
 
