@@ -1,3 +1,12 @@
-<div class="panel panel-body">
-  This is where the blog type posts will go.
+<div *ngIf="!loggedIn && !auth.isAuthenticated()" class="panel panel-body">
+  <h2>You must be logged in to view content</h2>
+</div>
+
+<div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
+  <div>
+    This is for the post content, needs to have date timestamped.
+  </div>
+  <div>
+    This is input field where only my account will be allowed to enter blog posts. Won't be visible for anyone else.
+  </div>
 </div>

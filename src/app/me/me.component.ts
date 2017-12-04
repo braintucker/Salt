@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
 import { Http } from '@angular/http';
+import { Auth } from '../auth.service';
+
 
 
 @Component({
@@ -15,7 +17,7 @@ export class Me implements OnInit {
   displayName;
   photoURL;
 
-  constructor(private af: AngularFire, private http: Http){
+  constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
 
   ngOnInit() {

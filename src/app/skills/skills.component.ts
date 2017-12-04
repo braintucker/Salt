@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
 import { Http } from '@angular/http';
-
+import { Auth } from '../auth.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class Skills implements OnInit {
 
   loggedIn;
 
-  constructor(private af: AngularFire, private http: Http){
+  constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
 
   ngOnInit() {
