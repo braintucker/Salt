@@ -43,9 +43,7 @@ export class Posts implements OnInit {
   }
 
   submit(date: Date, aId: number, post: string, title: string) {
-    // let postRef = this.af.database.object('/articles/' + this.articleId);
-    //Need to check the current posts that exist in the object and decide what id this
-    //post should recieve
+    // Need to add an update button that will allow you to update a post based on the post id number
 
     let length = this.articles.length;
 
@@ -68,8 +66,8 @@ export class Posts implements OnInit {
     // console.log("this is the title", title);
     // console.log("this is the date", date);
     // console.log("this is the post", post);
-    console.log("this is the length", length);
-    console.log("this is the id", aId);
+    // console.log("this is the length", length);
+    // console.log("this is the id", aId);
 
   }
 }

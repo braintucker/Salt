@@ -9,6 +9,7 @@
             <h1>{{ a.title }}</h1>
             <h3>{{ a.date }}</h3>
             <p>{{ a.post }}</p>
+            <p><strong>The ID is</strong> {{ a.id }}</p>
           </div>
     </article>
   </div>
@@ -19,10 +20,13 @@
       <div class="input-cust" >
         <input #titleEntry type="text" placeholder="Enter title" />
         <input #dateEntry type="date" placeholder="Enter date" />
-        <p #aId *ngFor="let a of articles">{{ a.id }}</p>
       </div>
       <textarea #postEntry class="form-control post-cust" type="text"> </textarea>
-      <button class="btn-cust" (click)="submit(dateEntry.value, aId, postEntry.value, titleEntry.value)" type="submit">Submit</button>
+      <div class="btn-cust">
+        <button (click)="submit(dateEntry.value, aId, postEntry.value, titleEntry.value)" type="submit">Submit</button>
+        <button type="submit">Update</button>
+      </div>
+
     </div>
 
 
