@@ -18,6 +18,7 @@ export class Posts implements OnInit {
   articles;
   exists;
   input = (<HTMLInputElement>document.getElementById("post"));
+  articleId = 5;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
 
@@ -43,6 +44,13 @@ export class Posts implements OnInit {
   }
 
   submit(post:string) {
+    // let postRef = this.af.database.object('/articles/' + this.articleId);
+
+    this.af.database.object('/articles/' + this.articleId).update({
+      date: "testeee",
+      post: "TEEEST",
+      title: "TEESTESTEST"
+    });
     console.log(post);
   }
 }
