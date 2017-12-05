@@ -14,9 +14,15 @@
 
   <form>
     <label>Blog Entry</label>
-    <textarea #postEntry class="form-control input-cust" type="text"> </textarea>
+    <div class="input-group">
+      <div class="input-cust" >
+        <input #titleEntry type="text" placeholder="Enter title" />
+        <input #dateEntry type="date" placeholder="Enter date" />
+      </div>
+      <textarea #postEntry class="form-control post-cust" type="text"> </textarea>
+      <button class="btn-cust" (click)="submit(dateEntry.value, postEntry.value, titleEntry.value)" type="submit">Submit</button>
+    </div>
 
-    <button (click)="submit(postEntry.value)" type="submit">Submit</button>
 
   </form>
 </div>
