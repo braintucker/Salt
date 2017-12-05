@@ -3,6 +3,18 @@
   background: #6D7993;
   background: #9099A2;
   background: #D5D5D5;*/
+  h1{
+    /*background: #000;*/
+    margin: 0;
+    margin-bottom: 1%;
+  }
+  h3{
+    /*background: #000;*/
+    font-size: 100%;
+    margin: 0;
+    margin-bottom: 1%;
+    padding-left: .5%;
+  }
   .article-cust{
     background: #D5D5D5;
   }

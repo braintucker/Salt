@@ -17,14 +17,13 @@ export class Posts implements OnInit {
   loggedIn;
   articles;
   exists;
-  input = (<HTMLInputElement>document.getElementById("post"));
-  articleId = 6;
+  articleId;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
 
     af.database.list('/articles').subscribe( x => {
       this.articles = x;
-      console.log("This is articles: ", this.articles);
+      console.log("This is articles length: ", this.articles.length);
     });
 
   }
@@ -43,18 +42,34 @@ export class Posts implements OnInit {
     });
   }
 
-  submit(date: Date, post: string, title: string) {
+  submit(date: Date, aId: number, post: string, title: string) {
     // let postRef = this.af.database.object('/articles/' + this.articleId);
     //Need to check the current posts that exist in the object and decide what id this
     //post should recieve
 
-    this.af.database.object('/articles/' + this.articleId).update({
+    let length = this.articles.length;
+
+    if(length > 0)
+    {
+      aId = length + 1;
+    }
+    else{
+      aId = 1;
+    }
+
+    this.af.database.object('/articles/' + aId).update({
       date: date,
+      id: aId,
       post: post,
       title: title
     });
-    console.log("this is the title", title);
-    console.log("this is the date", date);
-    console.log("this is the post", post);
+
+
+    // console.log("this is the title", title);
+    // console.log("this is the date", date);
+    // console.log("this is the post", post);
+    console.log("this is the length", length);
+    console.log("this is the id", aId);
+
   }
 }
