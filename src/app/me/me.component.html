@@ -1,5 +1,5 @@
-<div *ngIf="!auth.isAuthenticated() && !loggedIn" class="panel panel-body">
-  <h2>You must be logged in to view content</h2>
+<div class="alert alert-danger" *ngIf="!auth.isAuthenticated() && !loggedIn">
+  <strong>LOGIN ERROR</strong> You must be logged in to view content
 </div>
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel">
   <div class="panel panel-body">
@@ -22,7 +22,7 @@
       <ul>
         <li>2012-2017</li>
         <li>Louisiana State University</li>
-        <li>Received Bachelor's in Computer Science in 2017. During my time in collge, I also interned at GE</li>
+        <li>Received Bachelor's in Computer Science in 2017. During my time in college, I  interned at GE for two summers.</li>
       </ul>
     </div>
 

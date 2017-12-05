@@ -1,5 +1,5 @@
-<div *ngIf="!loggedIn && !auth.isAuthenticated()" class="panel panel-body">
-  <h2>You must be logged in to view content</h2>
+<div class="alert alert-danger" *ngIf="!loggedIn && !auth.isAuthenticated()">
+  <strong>LOGIN ERROR</strong> You must be logged in to view content
 </div>
 
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
@@ -11,7 +11,7 @@
           </div>
     </article>
   </div>
-  
+
   <form>
     <label>Blog Entry</label>
     <textarea #postEntry class="form-control input-cust" type="text"> </textarea>
