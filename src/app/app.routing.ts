@@ -1,10 +1,17 @@
 import { RouterModule } from '@angular/router';
 import { Login } from './login/login.component';
+import { Home } from './home/home.component';
 import { Me } from './me/me.component';
 import { Posts } from './posts/posts.component';
 import { Skills } from './skills/skills.component';
 
+
+
 export const routing = RouterModule.forRoot([
+  {
+    path: 'home',
+    component: Home
+  },
   {
     path: 'me',
     component: Me
@@ -23,7 +30,7 @@ export const routing = RouterModule.forRoot([
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ]);

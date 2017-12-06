@@ -1,0 +1,17 @@
+<div class="alert alert-danger" *ngIf="!auth.isAuthenticated() && !loggedIn">
+  <strong>LOGIN ERROR</strong> You must be logged in to view content
+</div>
+<div *ngIf="loggedIn || auth.isAuthenticated()" class="panel">
+  <div class="panel panel-body">
+    <h1>Insert Photo!</h1>
+    <div class="photo-cont">
+      <img class="img-responsive img-cust" src="../assets/self_portrait.jpg"/>
+      <p>This is a photo of myself</p>
+    </div>
+
+  </div>
+  <div class="panel panel-body">
+    <p>This where I am going to introduce myself in a few paragraphs and explain the purporse of this site.</p>
+  </div>
+
+</div>

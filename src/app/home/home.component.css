@@ -1,0 +1,26 @@
+  /*COLORS:
+  background: #96858F;
+  background: #6D7993;
+  background: #9099A2;
+  background: #D5D5D5;*/
+  .panel{
+    background-color: #6D7993;
+    text-align: center;
+  }
+  .panel-body{
+    background-color: #D5D5D5;
+  }
+  h1 {
+    /*margin: 15px 0px 5px 0px;*/
+    border-bottom: 5px solid black;
+    display: inline-block;
+  }
+  .photo-cont{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .img-cust{
+    border-radius: 5%;  
+
+
+  }
