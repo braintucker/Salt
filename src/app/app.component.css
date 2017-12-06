@@ -9,23 +9,28 @@ a{
   display: block;
 }
 ng-sidebar-container{
+  background-color: #9099A2;
   height: 100vh;
   position: absolute;
   z-index: 1;
-  background-color: #9099A2;
 }
 .navbar{
   background: #6D7993;
   border-color: #6D7993;
 }
-.navbar-header{
-  /*background: #000;*/
+.nav-header{
+  text-align: center;
+  position: relative;
   width: 100%;
-  text-align: left;
-  overflow: auto;
 }
-.btn-margin{
+.nav-group{
   display: inline-block;
+  position: absolute;
+  top: 8%;
+  padding-left: 1%;
+}
+.inner-group{
+  top: 0;
 }
 .panel1{
   background-color: #6D7993;
@@ -85,15 +90,6 @@ ng-sidebar-container{
   }
 .side-content{
   padding: 0 2em;
-}
-.btn-cust1{
-  position: relative;
-  background: #D5D5D5;
-  text-align: center;
-  margin-top: 1%;
-}
-.btn-push{
-  margin-bottom: 2.5%;
 }
 .icon-bar{
   width: 27px;

@@ -16,11 +16,10 @@
     display: inline-block;
   }
   .photo-cont{
-    width: 50%;
     margin: 0 auto;
+    width: 50%;
   }
   .img-cust{
-    border-radius: 5%;  
-
+    border-radius: 5%;
 
   }
