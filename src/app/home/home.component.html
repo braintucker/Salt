@@ -3,15 +3,25 @@
 </div>
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel">
   <div class="panel panel-body">
-    <h1>Insert Photo!</h1>
-    <div class="photo-cont">
-      <img class="img-responsive img-cust" src="../assets/self_portrait.jpg"/>
-      <p>This is a photo of myself</p>
+    <div class="info-cont">
+      <div class="img-cust">
+        <img class="img-responsive" src="../assets/dark-portrait.jpg"/>
+      </div>
+      <div class="text-cont">
+        <p>Hi my name is Brian. I am a recent grad from Louisiana State University.</p>
+        <p>I graduated with a bachelors in Computer Science and am currently focusing my time on becoming a front-end developer.</p>
+      </div>
     </div>
-
   </div>
   <div class="panel panel-body">
-    <p>This where I am going to introduce myself in a few paragraphs and explain the purporse of this site.</p>
+    <div class="info-cont">
+      <div>
+        <img class="img-responsive" src="../assets/blood-moon.jpg"/>
+      </div>
+      <div class="text-cont">
+        <p>In my freetime, I dabble in photography.</p>
+      </div>
+    </div>
   </div>
 
 </div>
