@@ -2,24 +2,35 @@
   <strong>LOGIN ERROR</strong> You must be logged in to view content
 </div>
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel">
-  <div class="panel panel-body">
+  <div class="panel panel1 panel-body">
     <div class="info-cont">
       <div class="img-cust">
         <img class="img-responsive" src="../assets/dark-portrait.jpg"/>
       </div>
       <div class="text-cont">
-        <p>Hi my name is Brian. I am a recent grad from Louisiana State University.</p>
-        <p>I graduated with a bachelors in Computer Science and am currently focusing my time on becoming a front-end developer.</p>
+        <div class="p1">
+          <p>Hi my name is Brian. I am a recent grad from Louisiana State University.</p>
+        </div>
+        <div class="p1">
+          <p>I graduated with a bachelors in Computer Science and am currently focusing my time on becoming a front-end developer.</p>
+        </div>
+
+
       </div>
     </div>
   </div>
-  <div class="panel panel-body">
+  <div class="panel panel1 panel-body">
     <div class="info-cont">
-      <div>
+      <div class="img-cust1">
         <img class="img-responsive" src="../assets/blood-moon.jpg"/>
       </div>
       <div class="text-cont">
-        <p>In my freetime, I dabble in photography.</p>
+        <div class="p2">
+          <p>In my freetime, I dabble in photography.</p>
+        </div>
+        <div class="p2">
+          <p>Here's a photo I took of the blood moon in 2015.</p>
+        </div>
       </div>
     </div>
   </div>

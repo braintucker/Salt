@@ -3,12 +3,13 @@
   background: #6D7993;
   background: #9099A2;
   background: #D5D5D5;*/
-  .panel{
+  .panel1{
     background-color: #6D7993;
-    text-align: center;
+    /*text-align: center;*/
   }
   .panel-body{
     background-color: #D5D5D5;
+    width: 100%
   }
   h1 {
     /*margin: 15px 0px 5px 0px;*/
@@ -16,27 +17,61 @@
     display: inline-block;
   }
   p{
-    background: #fff;
-    margin-right: 3%;
+  }
+  .p1{
+      background: #fff;
+      margin-right: 3%;
+      padding-left: 1%;
+  }
+  .p2{
+      background: #fff;
+      margin-right: 4%;
+      padding-left: 1%;
   }
   .info-cont{
     background: #000;
-    display: block;
-    border-radius: 1%;
     /*margin: 0 auto;*/
-    width: 100%;
-    height: auto;
+    border-radius: .5%;
     position: relative;
   }
   .img-cust{
     max-width: 25%;
-    display: inline-block;
     height: auto;
     border-radius: 5%;
   }
+  .img-cust1{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5%;
+  }
+  .img-responsive{
+    border-radius: .5%;
+  }
   .text-cont{
     position: absolute;
-    display: inline-block;
+    top: 0;
+    right: 0;
     max-width: 50%;
-    top: 5%;
+    margin-top: 1%;
   }
+
+  @media all and (max-width: 1200px) { /* screen size until 1200px */
+      .text-cont{
+        max-width: 50%;
+      }
+  }
+  @media all and (max-width: 1000px) { /* screen size until 1000px */
+    .text-cont{
+      max-width: 50%;
+    }
+      }
+  @media all and (max-width: 700px) { /* screen size until 1000px */
+    .text-cont{
+      max-width: 50%;
+    }
+      }
+  @media all and (max-width: 500px) { /* screen size until 500px */
+    .text-cont{
+      max-width: 40%;
+    }
+      }

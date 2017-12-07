@@ -32,9 +32,14 @@ ng-sidebar-container{
   cursor: pointer;
 }
 .divider{
-    width:5px;
-    height:auto;
     display:inline-block;
+    height:auto;
+    width:5px;
+}
+.divider1{
+    display:inline-block;
+    height:auto;
+    width: 15px;
 }
 .inner-group{
   display: inline-flex;
