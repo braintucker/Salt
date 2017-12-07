@@ -17,20 +17,28 @@ ng-sidebar-container{
 .navbar{
   background: #6D7993;
   border-color: #6D7993;
+  position: relative;
 }
 .nav-header{
   text-align: center;
-  position: relative;
   width: 100%;
 }
 .nav-group{
-  display: inline-block;
-  position: absolute;
-  top: 8%;
   padding-left: 1%;
+  max-width: 100%;
+  height: 100%;
+}
+.menu-bar{
+  cursor: pointer;
+}
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
 }
 .inner-group{
-  top: 0;
+  display: inline-flex;
+  margin: 2%;
 }
 .panel1{
   background-color: #6D7993;
@@ -65,7 +73,6 @@ ng-sidebar-container{
   width: 100vw;
   position: relative;
 }
-
 .cust-header__toggle {
     background: #D5D5D5;
     border: 0.15rem solid #fff;

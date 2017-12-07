@@ -33,42 +33,43 @@
 
       <div ng-sidebar-content>
           <section>
-          <nav class="navbar navbar-default nav-cust">
+          <nav class="navbar">
             <div class="navbar-header">
-
                 <div class="login-head">
                   <div class="login-pic">
                     <logged-in></logged-in>
                   </div>
                   <a class=" header-name navbar-brand" href="#">Brian Tucker</a>
                 </div>
-
-
-
-                    <button class="btn-color btn-cust btn-margin"(click)="_toggleSidebar()">
-                      <div class="icon-bar"></div>
-                      <div class="icon-bar"></div>
-                      <div class="icon-bar"></div>
-                    </button>
-
               <div class="nav-group">
-                      <button
-                        class="btn btn-primary inner-group"
-                        routerLink="/">
-                          Home
-                      </button>
-                      <button
-                        class="btn btn-primary inner-group"
-                        *ngIf="!auth.isAuthenticated()"
-                        (click)="auth.login()">
-                          Log In
-                      </button>
-                      <button
-                        class="btn btn-primary inner-group"
-                        *ngIf="auth.isAuthenticated()"
-                        (click)="auth.logout()">
-                          Log Out
-                      </button>
+
+                      <div class="inner-group">
+                        <div class="menu-bar" (click)="_toggleSidebar()">
+                          <div class="icon-bar"></div>
+                          <div class="icon-bar"></div>
+                          <div class="icon-bar"></div>
+                        </div>
+                        <div class="divider"></div>
+                        <button
+                          class="btn"
+                          routerLink="/">
+                            Home
+                        </button>
+                        <div class="divider"></div>
+                        <button
+                          class="btn"
+                          *ngIf="!auth.isAuthenticated()"
+                          (click)="auth.login()">
+                            Log In
+                        </button>
+                        <div class="divider"></div>
+                        <button
+                          class="btn"
+                          *ngIf="auth.isAuthenticated()"
+                          (click)="auth.logout()">
+                            Log Out
+                        </button>
+                      </div>
                   </div>
               </div>
           </nav>
