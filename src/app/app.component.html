@@ -32,11 +32,11 @@
               (click)="auth.logout()">
                 Log Out
             </button>
-            <p>This is the sidebar, navigation links will go here</p>
-            <p>Sidebar content</p>
-            <a [routerLink]= "['/home']">Home</a>
-            <a [routerLink]= "['/skills']">What am I learning</a>
-            <a [routerLink]= "['/posts']">Blog</a>
+            <div class="side-cont">
+              <a [routerLink]= "['/home']">Home</a>
+              <a [routerLink]= "['/skills']">What am I learning</a>
+              <a [routerLink]= "['/posts']">Blog</a>
+            </div>
 
             <a closeSidebar>Close</a>
           </div>

@@ -10,6 +10,13 @@
   width: 50%;
   margin: 0 auto;
 }
+.panel1{
+  background: #e6e6e6;
+  margin: 2%;
+}
+.logout{
+  margin: 2%;
+}
 input.ng-dirty.ng-invalid
 {
   border: solid red 2px;

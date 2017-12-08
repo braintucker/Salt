@@ -5,11 +5,15 @@
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
   <div class="post-cont">
     <article *ngFor="let a of articles" class="article-cust">
-          <div>
+          <div class="blog-post">
             <h1>{{ a.title }}</h1>
-            <h3>{{ a.date }}</h3>
-            <p>{{ a.post }}</p>
-            <p><strong>The ID is</strong> {{ a.id }}</p>
+            <div class="text-cont">
+              <h3>{{ a.date }}</h3>
+              <p>{{ a.post }}</p>
+            </div>
+            <div class="id-cont">
+              <p><strong>The post id is:</strong> {{ a.id }}</p>
+            </div>
           </div>
     </article>
   </div>
