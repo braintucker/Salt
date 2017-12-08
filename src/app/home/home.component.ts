@@ -14,8 +14,6 @@ import { Auth } from '../auth.service';
 export class Home implements OnInit {
 
   loggedIn;
-  displayName;
-  photoURL;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }

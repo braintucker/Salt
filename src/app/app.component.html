@@ -17,11 +17,24 @@
         (onClosed)="_onClosed()">
         <div class="sidebar-cust">
           <div class="panel panel-default panel2">
+
+            <button [routerLink]= "['/login']">Login with Firebase</button>
+            <button
+              class=""
+              *ngIf="!auth.isAuthenticated()"
+              (click)="auth.login()">
+                Log In
+            </button>
+            <div class="divider"></div>
+            <button
+              class=""
+              *ngIf="auth.isAuthenticated()"
+              (click)="auth.logout()">
+                Log Out
+            </button>
             <p>This is the sidebar, navigation links will go here</p>
             <p>Sidebar content</p>
             <a [routerLink]= "['/home']">Home</a>
-            <a [routerLink]= "['/login']">Login</a>
-            <a [routerLink]= "['/me']">History</a>
             <a [routerLink]= "['/skills']">What am I learning</a>
             <a [routerLink]= "['/posts']">Blog</a>
 

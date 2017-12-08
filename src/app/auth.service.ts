@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 
 @Injectable()
 export class Auth {
+
+  loggedIn;
 
   auth0 = new auth0.WebAuth({
     clientID: 'f5b0p1JFkLXyPa7kNMsxaw2H27nJOdCw',
@@ -15,11 +18,29 @@ export class Auth {
     scope: 'openid'
   });
 
-  constructor(public router: Router) {}
+  constructor(private af: AngularFire, public router: Router) {
+    this.af.auth.subscribe(authState => {
+      if(!authState) {
+        this.loggedIn = false;
+        return
+      }
+        this.loggedIn = true;
+    });
+
+  }
+
 
   public login(): void {
-    this.auth0.authorize();
-    console.log("This is the auth", auth0.authResult);
+
+    if(this.loggedIn){
+      console.log("Already logged in, cannot continue!", this.loggedIn );
+      alert("ALREADY LOGGED IN. CANNOT LOGIN")
+
+    }
+    else{
+      this.auth0.authorize();
+      console.log("This is logged in", this.loggedIn);
+    }
   }
 
   // ...

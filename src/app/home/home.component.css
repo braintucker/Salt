@@ -31,13 +31,14 @@
   .info-cont{
     background: #000;
     /*margin: 0 auto;*/
-    border-radius: .5%;
+    border-radius: 5px;
     position: relative;
   }
   .img-cust{
     max-width: 25%;
     height: auto;
     border-radius: 5%;
+    padding-left: 10px;
   }
   .img-cust1{
     max-width: 100%;
