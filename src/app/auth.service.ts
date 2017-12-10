@@ -8,6 +8,7 @@ import * as auth0 from 'auth0-js';
 export class Auth {
 
   loggedIn;
+  userProfile: any;
 
   auth0 = new auth0.WebAuth({
     clientID: 'f5b0p1JFkLXyPa7kNMsxaw2H27nJOdCw',
@@ -15,7 +16,7 @@ export class Auth {
     responseType: 'token id_token',
     audience: 'https://braintuck.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   constructor(private af: AngularFire, public router: Router) {
@@ -28,6 +29,22 @@ export class Auth {
     });
 
   }
+
+  public getProfile(cb): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access token must exist to fetch profile');
+    }
+
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if(profile) {
+        self.userProfile = profile;
+      }
+      cb(err, profile);
+    });
+}
+
 
 
   public login(): void {

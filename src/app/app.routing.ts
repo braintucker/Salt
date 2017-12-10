@@ -3,6 +3,7 @@ import { Login } from './login/login.component';
 import { Home } from './home/home.component';
 import { Me } from './me/me.component';
 import { Posts } from './posts/posts.component';
+import { Profile } from './profile/profile.component';
 import { Skills } from './skills/skills.component';
 
 
@@ -19,6 +20,10 @@ export const routing = RouterModule.forRoot([
   {
     path: 'posts',
     component: Posts
+  },
+  {
+    path: 'profile',
+    component: Profile
   },
   {
     path: 'login',

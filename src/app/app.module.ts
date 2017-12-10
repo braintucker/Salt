@@ -14,6 +14,7 @@ import { Login } from './login/login.component';
 import { Home } from './home/home.component';
 import { Me } from './me/me.component';
 import { Posts } from './posts/posts.component';
+import { Profile } from './profile/profile.component';
 import { Skills } from './skills/skills.component';
 
 import { Auth } from './auth.service';
@@ -30,7 +31,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, Home, LoggedIn, Login, Me, Posts, Skills
+    AppComponent, Home, LoggedIn, Login, Me, Posts, Profile, Skills
   ],
   imports: [
     BrowserModule,
@@ -38,6 +39,6 @@ export const firebaseConfig = {
     FormsModule, HttpModule, SidebarModule.forRoot(), routing
   ],
   providers: [Auth, {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent, Home, LoggedIn, Login, Me, Posts, Skills]
+  bootstrap: [AppComponent, Home, LoggedIn, Login, Me, Posts, Profile, Skills]
 })
 export class AppModule { }
