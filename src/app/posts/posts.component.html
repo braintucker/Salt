@@ -20,7 +20,7 @@
 
   <form>
     <label>Blog Entry</label>
-    <div class="input-group">
+    <div *ngIf="isBrian" class="input-group">
       <div class="input-cust" >
         <input #titleEntry type="text" placeholder="Enter title" />
         <input #dateEntry type="date" placeholder="Enter date" />

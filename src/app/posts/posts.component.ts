@@ -15,9 +15,11 @@ import  'rxjs/add/operator/take'
 export class Posts implements OnInit {
 
   loggedIn;
+  isBrian;
   articles;
   exists;
   articleId;
+
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
 
@@ -36,7 +38,17 @@ export class Posts implements OnInit {
         console.log("Logged in with auth0?", this.auth.isAuthenticated());
         return
       }
+
+        //Code to check if I logged in with Facebook
+        if(authState.uid === '9q7ZqhWxohV7T9H7YMBfi2xi56M2') {
+          this.isBrian = true;
+        }
+        else{
+          this.isBrian = false;
+        }
+
         this.loggedIn = true;
+        console.log("is Brian?", this.isBrian);
         console.log("Logged in with firebase?", this.loggedIn);
         console.log("Logged in with auth0?", this.auth.isAuthenticated());
     });
