@@ -64,20 +64,20 @@
                         </div>
                         <div class="divider1"></div>
                         <button
-                          class="btn"
+                          class="btn btn-sm"
                           routerLink="/">
                             Home
                         </button>
                         <div class="divider"></div>
                         <button
-                          class="btn"
+                          class="btn btn-sm"
                           *ngIf="!auth.isAuthenticated()"
                           (click)="auth.login()">
                             Log In
                         </button>
                         <div class="divider"></div>
                         <button
-                          class="btn"
+                          class="btn btn-sm"
                           *ngIf="auth.isAuthenticated()"
                           (click)="auth.logout()">
                             Log Out
