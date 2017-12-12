@@ -1,5 +1,5 @@
 <div class="alert alert-danger" *ngIf="!loggedIn && !auth.isAuthenticated()">
-  <strong>LOGIN ERROR</strong> You must be logged in to view content
+  <strong>LOGIN ERROR</strong> You must be logged in to view blog
 </div>
 
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">

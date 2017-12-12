@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { LoggedIn } from './logged-in/logged-in.component';
 import { Login } from './login/login.component';
 import { Home } from './home/home.component';
-import { Me } from './me/me.component';
 import { Posts } from './posts/posts.component';
 import { Profile } from './profile/profile.component';
 import { Skills } from './skills/skills.component';
@@ -31,7 +30,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, Home, LoggedIn, Login, Me, Posts, Profile, Skills
+    AppComponent, Home, LoggedIn, Login, Posts, Profile, Skills
   ],
   imports: [
     BrowserModule,
@@ -39,6 +38,6 @@ export const firebaseConfig = {
     FormsModule, HttpModule, SidebarModule.forRoot(), routing
   ],
   providers: [Auth, {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent, Home, LoggedIn, Login, Me, Posts, Profile, Skills]
+  bootstrap: [AppComponent, Home, LoggedIn, Login, Posts, Profile, Skills]
 })
 export class AppModule { }
