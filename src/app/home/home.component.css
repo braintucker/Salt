@@ -12,15 +12,29 @@
     width: 100%
   }
   .p1{
-      background: #fff;
+      background: #6D7993;
+      margin-right: 3%;
+      padding: 1%;
+      border-radius: 5px;
+      color: #fff;
+  }
+  .p11{
+      background: #D5D5D5;
       margin-right: 3%;
       padding-left: 1%;
       border-radius: 5px;
   }
   .p2{
-      background: #fff;
+      background: #D5D5D5;
       margin-right: 4%;
       padding-left: 1%;
+      border-radius: 5px;
+  }
+  .p3{
+      background: #6D7993;
+      color: #fff;
+      margin-right: 4%;
+      padding-left: 2%;
       border-radius: 5px;
   }
   .panel-cust{
@@ -43,7 +57,6 @@
   .img-cust1{
     max-width: 100%;
     height: auto;
-    border-radius: 5%;
   }
   .img-responsive{
     border-radius: .5%;
@@ -55,7 +68,17 @@
     max-width: 50%;
     margin-top: 1%;
   }
-
+  .text-cont1{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    max-width: 35%;
+    margin-top: 1%;
+  }
+  #mid {
+    display: block;
+    margin: 0 auto;
+  }
   @media all and (max-width: 1200px) { /* screen size until 1200px */
       .text-cont{
         max-width: 50%;
