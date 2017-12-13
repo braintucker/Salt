@@ -5,7 +5,6 @@ background: #9099A2;
 background: #D5D5D5;*/
 .panel1{
   background-color: #6D7993;
-  margin-bottom: 50%;
 }
 
 .panel-body{
@@ -74,4 +73,5 @@ h1 {
   /* background: #fff; */
   display: block;
   margin: 0 auto;
+  margin-left: 1%;
 }
