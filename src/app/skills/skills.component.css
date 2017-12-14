@@ -24,10 +24,10 @@ p{
   margin-left: 1%;
 }
 h1 {
-  /*margin: 15px 0px 5px 0px;*/
+  margin-left: 1%;
   border-bottom: 2px solid #D5D5D5;
   display: inline-block;
-  color: #9099A2;
+  color: #D5D5D5;
 }
 .img-cont{
   max-width: 100%;
@@ -35,7 +35,7 @@ h1 {
   background: #fff;
   margin: 1%;
   border-style: ridge;
-  border-width: 3px;
+  border-width: 2px;
   padding: 5%;
   padding-bottom: 15%;
 }
@@ -43,7 +43,6 @@ h1 {
   display: flex;
   font-weight: bold;
 }
-
 .icon-cust{
   cursor: pointer;
   width: 100%;
@@ -56,6 +55,12 @@ h1 {
   text-align: center;
   max-width: 15%;
   height: auto;
+}
+.icon-cust2{
+  cursor: pointer;
+  text-align: center;
+  width: 45%;
+  height: 40%;
 }
 .icon-name{
   position: absolute;
