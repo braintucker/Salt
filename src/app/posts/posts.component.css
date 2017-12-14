@@ -8,6 +8,7 @@
     margin: 0;
     margin-bottom: 1%;
   }
+
   h3{
     /*background: #000;*/
     font-size: 100%;
@@ -24,6 +25,16 @@
   .blog-post{
     background: #e6e6e6;
     padding: 2%;
+  }
+  .head-cont{
+    background: #96858F;
+    color: #D5D5D5;
+    border-radius: 3px;
+    margin-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: .1%;
+    padding-top: 2%;
   }
   .panel{
     background-color: #6D7993;

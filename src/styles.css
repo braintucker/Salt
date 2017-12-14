@@ -3,6 +3,26 @@ body{
   background-color: #9099A2;
   font-family: 'Poppins', sans-serif;
 }
+@media all and (max-width: 2000px) { /* screen size until 1200px */
+    body {
+        font-size: 22px; /* 1.5x default size */
+    }
+}
+@media all and (max-width: 1800px) { /* screen size until 1200px */
+    body {
+        font-size: 20px; /* 1.5x default size */
+    }
+}
+@media all and (max-width: 1600px) { /* screen size until 1200px */
+    body {
+        font-size: 18px; /* 1.5x default size */
+    }
+}
+@media all and (max-width: 1400px) { /* screen size until 1200px */
+    body {
+        font-size: 16px; /* 1.5x default size */
+    }
+}
 @media all and (max-width: 1200px) { /* screen size until 1200px */
     body {
         font-size: 14px; /* 1.5x default size */
