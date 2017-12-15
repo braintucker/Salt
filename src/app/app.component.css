@@ -17,6 +17,9 @@ ng-sidebar-container{
 span{
   padding-right: 10%;
 }
+#fbLog{
+  padding-right: 8%;
+}
 .navbar{
   background: #6D7993;
   border-color: #6D7993;

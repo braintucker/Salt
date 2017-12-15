@@ -18,7 +18,8 @@
         <div class="sidebar-cust">
           <div class="panel panel-default panel2">
 
-            <button [routerLink]= "['/login']">Login with Firebase</button>
+            <button *ngIf="!loggedIn" [routerLink]= "['/login']">Login with Firebase</button>
+            <button *ngIf="loggedIn" (click)="logout()">Logout with Firebase</button>
             <button
               class=""
               *ngIf="!auth.isAuthenticated()"
@@ -81,6 +82,21 @@
                           *ngIf="auth.isAuthenticated()"
                           (click)="auth.logout()">
                             <span class="glyphicon glyphicon-log-out"></span>Log Out
+                        </button>
+                        <button
+                          id="fbLog"
+                          class="btn btn-sm"
+                          *ngIf="!loggedIn"
+                          [routerLink]= "['/login']">
+                            <span class="glyphicon glyphicon-log-in"></span>Firebase Login
+                        </button>
+                        <button
+                          id="fbLog"
+                          class="btn btn-sm"
+                          *ngIf="loggedIn"
+                          (click)="logout()"
+                          [routerLink]= "['/home']">
+                            <span class="glyphicon glyphicon-log-out"></span>Firebase Logout
                         </button>
                       </div>
                   </div>

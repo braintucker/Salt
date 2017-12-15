@@ -29,31 +29,29 @@ export class AppComponent {
   private _keyClose: boolean = false;
   private _autoCollapseHeight: number = null;
   private _autoCollapseWidth: number = null;
-  foods: FirebaseListObservable<any[]>;
-  restaurants: Observable<any[]>;
-  exists;
+  loggedIn;
+  onFb;
+
 
 
   ngOnInit() {
-    this.foods = this.af.database.list('/foods', {
-      query: {
-        orderByKey: true
+    this.af.auth.subscribe(authState => {
+      if(!authState) {
+        this.loggedIn = false;
+        console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
+        return
       }
-    });
 
-    this.restaurants = this.af.database.list('/restaurants', {
-      query: {
-        orderByChild: 'name'
-      }
-    })
-      .map(restaurants => {
-        restaurants.map(restaurant => {
-          restaurant.featureTypes = [];
-          for (var f in restaurant.features)
-            restaurant.featureTypes.push(this.af.database.object('/features/' + f));
-        });
-        return restaurants;
-      });
+        this.loggedIn = true;
+        console.log("Logged in with firebase?", this.loggedIn);
+        console.log("Logged in with auth0?", this.auth.isAuthenticated());
+    });
+  }
+  logout() {
+    this.af.auth.logout();
+    this.onFb = false;
+    this.loggedIn = false;
   }
   private _toggleSidebar() {
     this._opened = !this._opened;
