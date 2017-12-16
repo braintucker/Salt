@@ -16,9 +16,10 @@ export class Login implements OnInit {
   err;
   displayName;
   photoURL;
+  show1;
+  show4;
   onFb = false;
   loggedIn;
-  accessTok;
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
 
@@ -49,7 +50,6 @@ export class Login implements OnInit {
 
           userRef.subscribe(user => {
               let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
-              this.accessTok = user.accessToken;
               this.http.get(url).subscribe(response => {
                 let user = response.json();
                 //updating the user object to have first_name and last_name properties when logged in

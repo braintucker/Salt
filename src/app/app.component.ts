@@ -12,25 +12,25 @@ import  'rxjs/add/operator/take'
 })
 export class AppComponent {
 
-  constructor(private af: AngularFire, private auth: Auth){
+  constructor(private af: AngularFire, public auth: Auth){
     auth.handleAuthentication();
   }
 
-  private _opened: boolean = false;
-  private _modeNum: number = 0;
-  private _positionNum: number = 0;
-  private _dock: boolean = false;
-  private _closeOnClickOutside: boolean = false;
-  private _closeOnClickBackdrop: boolean = false;
-  private _showBackdrop: boolean = false;
-  private _animate: boolean = true;
-  private _trapFocus: boolean = true;
-  private _autoFocus: boolean = true;
-  private _keyClose: boolean = false;
-  private _autoCollapseHeight: number = null;
-  private _autoCollapseWidth: number = null;
-  loggedIn;
-  onFb;
+   _opened: boolean = false;
+   _modeNum: number = 0;
+   _positionNum: number = 0;
+   _dock: boolean = false;
+   _closeOnClickOutside: boolean = false;
+   _closeOnClickBackdrop: boolean = false;
+   _showBackdrop: boolean = false;
+   _animate: boolean = true;
+   _trapFocus: boolean = true;
+   _autoFocus: boolean = true;
+   _keyClose: boolean = false;
+   _autoCollapseHeight: number = null;
+   _autoCollapseWidth: number = null;
+   loggedIn;
+   onFb;
 
 
 
@@ -53,22 +53,22 @@ export class AppComponent {
     this.onFb = false;
     this.loggedIn = false;
   }
-  private _toggleSidebar() {
+  _toggleSidebar() {
     this._opened = !this._opened;
   }
-  private _onOpenStart(): void {
+  _onOpenStart(): void {
     //console.info('Sidebar opening');
   }
 
-  private _onOpened(): void {
+  _onOpened(): void {
     //console.info('Sidebar opened');
   }
 
-  private _onCloseStart(): void {
+  _onCloseStart(): void {
     //console.info('Sidebar closing');
   }
 
-  private _onClosed(): void {
+ _onClosed(): void {
     //console.info('Sidebar closed');
   }
 }

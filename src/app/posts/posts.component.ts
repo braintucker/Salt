@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
-import { Http } from '@angular/http';
 import { Auth } from '../auth.service';
 import 'rxjs/add/operator/map';
 import  'rxjs/add/operator/take'
@@ -21,7 +20,7 @@ export class Posts implements OnInit {
   articleId;
 
 
-  constructor(private af: AngularFire, private http: Http, private auth: Auth){
+  constructor(private af: AngularFire, public auth: Auth){
 
     af.database.list('/articles').subscribe( x => {
       this.articles = x;
