@@ -7,6 +7,8 @@
     /*background: #000;*/
     margin: 0;
     margin-bottom: 1%;
+    color: #D5D5D5;
+    text-shadow: -.5px 0 #96858F, 0 .5px #96858F, .5px 0 #96858F, 0 -.5px #96858F;
   }
 
   h3{
@@ -27,7 +29,6 @@
     padding: 2%;
   }
   .head-cont{
-    background: #96858F;
     color: #D5D5D5;
     border-radius: 3px;
     margin-bottom: 1%;

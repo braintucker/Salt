@@ -22,6 +22,12 @@ background: #D5D5D5;*/
 .logout{
   margin: 2%;
 }
+.login-head{
+  width: 100%;
+  margin: 0 auto;
+  background: none;
+  border: none;
+}
 input.ng-dirty.ng-invalid
 {
   border: solid red 2px;
