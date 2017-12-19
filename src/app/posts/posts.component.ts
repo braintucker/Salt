@@ -24,7 +24,6 @@ export class Posts implements OnInit {
 
     af.database.list('/articles').subscribe( x => {
       this.articles = x;
-      console.log("This is articles length: ", this.articles.length);
     });
 
   }
@@ -33,8 +32,6 @@ export class Posts implements OnInit {
     this.af.auth.subscribe(authState => {
       if(!authState) {
         this.loggedIn = false;
-        console.log("Logged in with firebase?", this.loggedIn);
-        console.log("Logged in with auth0?", this.auth.isAuthenticated());
         return
       }
 
@@ -47,9 +44,6 @@ export class Posts implements OnInit {
         }
 
         this.loggedIn = true;
-        console.log("is Brian?", this.isBrian);
-        console.log("Logged in with firebase?", this.loggedIn);
-        console.log("Logged in with auth0?", this.auth.isAuthenticated());
     });
   }
 
