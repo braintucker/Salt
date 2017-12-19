@@ -18,7 +18,15 @@ span{
   padding-right: 10%;
 }
 #fbLog{
-  padding-right: 8%;
+  width: auto;
+  margin: 1%;
+}
+.btn-cust{
+  background: #D5D5D5;
+  border-radius: 6%;
+  flex: auto;
+  height: 100%;
+  margin: 2%;
 }
 .navbar{
   background: #6D7993;

@@ -64,41 +64,49 @@
                           <div class="icon-bar"></div>
                         </div>
                         <div class="divider1"></div>
-                        <button
-                          class="btn btn-sm"
-                          routerLink="/">
-                            <span class="glyphicon glyphicon-home"></span>Home
-                        </button>
-                        <div class="divider"></div>
-                        <button
-                          class="btn btn-sm"
-                          *ngIf="!auth.isAuthenticated()"
-                          (click)="auth.login()">
-                            <span class="glyphicon glyphicon-log-in"></span>Log In
-                        </button>
-                        <div class="divider"></div>
-                        <button
-                          class="btn btn-sm"
-                          *ngIf="auth.isAuthenticated()"
-                          (click)="auth.logout()">
-                            <span class="glyphicon glyphicon-log-out"></span>Log Out
-                        </button>
-                        <div class="divider"></div>
-                        <button
-                          id="fbLog"
-                          class="btn btn-sm"
-                          *ngIf="!loggedIn"
-                          [routerLink]= "['/login']">
-                            <span class="glyphicon glyphicon-log-in"></span>Firebase Login
-                        </button>
-                        <button
-                          id="fbLog"
-                          class="btn btn-sm"
-                          *ngIf="loggedIn"
-                          (click)="logout()"
-                          [routerLink]= "['/home']">
-                            <span class="glyphicon glyphicon-log-out"></span>Firebase Logout
-                        </button>
+
+                        <table>
+                          <td><button
+                            class="btn-cust"
+                            routerLink="/">
+                              <span class="glyphicon glyphicon-home"></span>Home
+                          </button></td>
+                          <td>
+                            <button
+                              class="btn-cust"
+                              *ngIf="!auth.isAuthenticated()"
+                              (click)="auth.login()">
+                                <span class="glyphicon glyphicon-log-in"></span>Log In
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              class="btn-cust"
+                              *ngIf="auth.isAuthenticated()"
+                              (click)="auth.logout()">
+                                <span class="glyphicon glyphicon-log-out"></span>Log Out
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              id="fbLog"
+                              class="btn-cust"
+                              *ngIf="!loggedIn"
+                              [routerLink]= "['/login']">
+                                <span class="glyphicon glyphicon-log-in"></span>Firebase Login
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              id="fbLog"
+                              class=""
+                              *ngIf="loggedIn"
+                              (click)="logout()"
+                              [routerLink]= "['/home']">
+                                <span class="glyphicon glyphicon-log-out"></span>Firebase Logout
+                            </button>
+                          </td>
+                        </table>
                       </div>
                   </div>
               </div>
