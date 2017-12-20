@@ -15,7 +15,7 @@ export class Auth {
     domain: 'braintuck.auth0.com',
     responseType: 'token id_token',
     audience: 'https://braintuck.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'https://salt-dd59b.firebaseapp.com/#/callback',
     scope: 'openid profile'
   });
 
