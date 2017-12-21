@@ -35,7 +35,7 @@
       [disabled]="form.invalid">Register</button>
     </form>
 
-  <button (click)="show4 = !show4" class="btn btn-info">{{show4 ? 'Go Back' : 'Login'}}</button>
+  <button *ngIf="!auth0" (click)="show4 = !show4" class="btn btn-info">{{show4 ? 'Go Back' : 'Login'}}</button>
   <!-- <button (click)="dummy()" class="btn btn-info">Dummy Login</button>
   <button (click)="test()" class="btn btn-info">test</button> -->
 
@@ -70,14 +70,17 @@
       </form>
     </div>
 
-    <div class="logout">
+    <div *ngIf="!auth0" class="logout">
       <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+    <div *ngIf="auth0" class="logout">
+      <p class="alert alert-danger">Cannot login with Firebase, logged in with Auth0.</p>
     </div>
     <div *ngIf="photoURL" class="panel panel-fb">
       <h1>Hello, {{ displayName }} you logged in using Facebook.</h1>
     </div>
     <div *ngIf="loggedIn && !photoURL" class="panel panel-fb">
-        <h1>You are logged in!</h1>
+        <h1 class="alert alert-success">You are logged in!</h1>
     </div>
  </div>
 </div>

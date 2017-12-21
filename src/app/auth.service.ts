@@ -50,8 +50,7 @@ export class Auth {
   public login(): void {
 
     if(this.loggedIn){
-      console.log("Already logged in, cannot continue!", this.loggedIn );
-      alert("ALREADY LOGGED IN. CANNOT LOGIN")
+      alert("ALREADY LOGGED IN WITH FIREBASE. CANNOT LOGIN")
 
     }
     else{

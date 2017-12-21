@@ -55,7 +55,8 @@ footer{
   height: 100%;
 }
 .menu-bar{
-  padding-left: 5%;
+  padding-top: 10%;
+  padding-left: 10%;
   cursor: pointer;
 }
 .divider{

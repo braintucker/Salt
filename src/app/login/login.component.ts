@@ -15,20 +15,23 @@ export class Login implements OnInit {
   password = '';
   err;
   displayName;
-  photoURL;
   show1;
   show4;
   onFb = false;
   loggedIn;
+  auth0;
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
 
   //get currently logged in user
   ngOnInit() {
     this.af.auth.subscribe(authState => {
+
+      if(this.auth.isAuthenticated()) {
+        this.auth0 = true;
+      }
       if(!authState) {
         this.displayName = null;
-        this.photoURL = null;
         this.loggedIn = false;
         return
       }
@@ -50,28 +53,9 @@ export class Login implements OnInit {
               });
             });
           }
-
         this.displayName = authState.auth.displayName;
-        this.photoURL = authState.auth.photoURL;
     });
   }
-
-  console() {
-    //why does this still carry the uid, when after-login contains the accessToken?
-    this.af.auth.subscribe( authState => {
-      console.log("This is the current authState:", authState);
-    })
-  }
-
-  dummy() {
-    this.loggedIn = true;
-    let authState = {};
-    console.log("Log?", this.loggedIn);
-  }
-  test() {
-    console.log("This is logged in", this.loggedIn);
-  }
-
   loginFb() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
@@ -79,9 +63,7 @@ export class Login implements OnInit {
       scope: ['public_profile', 'user_friends']
     }).then((authState: any) => {
       //after logging in, the uid is removed and an accessToken is added
-      if(!authState.facebook.uid){
-        console.log("FACEBOOK UID DOESN'T EXIST")}
-        console.log("AFTER LOGIN:", authState);
+
       //creating a user in the firebase database with the users
       //first_name & last_name, along with their access_token
       this.af.database.object('/users/' + authState.uid).update({
@@ -90,7 +72,6 @@ export class Login implements OnInit {
     });
     this.onFb = true;
   }
-
   login(form: NgForm) {
     this.onFb = false;
     this.af.auth.login({
@@ -100,40 +81,13 @@ export class Login implements OnInit {
       method: AuthMethods.Password,
       provider: AuthProviders.Password
     })
-    .then(authState => console.log('LOGIN-THEN', authState))
     .catch(error => this.err = error.message);
     form.resetForm();
     this.err = null;
   }
-
   logout() {
     this.af.auth.logout();
     this.onFb = false;
     this.loggedIn = false;
-  }
-
-  register(form: NgForm) {
-    if(this.onFb) {
-      console.log("Already logged with fb");
-      alert("Already logged with fb");
-      form.resetForm();
-      return
-    }
-    let em = this.email;
-    let pswd = this.password;
-    this.af.auth.createUser({
-      email: em,
-      password: pswd
-    })
-    .then(authState => {
-      //console.log("REGISTER-THEN", authState)
-      authState.auth.sendEmailVerification();
-    })
-    .catch(error => {
-      console.log("REGISTER-ERROR", error);
-      this.err = error.message;
-    });
-    form.resetForm();
-    this.err = null;
   }
 }
