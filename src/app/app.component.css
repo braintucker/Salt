@@ -55,6 +55,7 @@ footer{
   height: 100%;
 }
 .menu-bar{
+  padding-left: 5%;
   cursor: pointer;
 }
 .divider{
@@ -72,9 +73,8 @@ footer{
   margin: 2%;
 }
 .img-cont{
-max-width: 3%;
+max-width: 2.5%;
 padding-left: 1%;
-height: auto;
 }
 .panel1{
   background-color: #6D7993;
