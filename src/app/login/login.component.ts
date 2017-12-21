@@ -20,6 +20,7 @@ export class Login implements OnInit {
   onFb = false;
   loggedIn;
   auth0;
+  photoURL;
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
 
