@@ -27,26 +27,16 @@ export class Login implements OnInit {
   ngOnInit() {
     this.af.auth.subscribe(authState => {
       if(!authState) {
-        //console.log("NOT LOGGED IN", authState);
-        //console.log("onFb", this.onFb);
         this.displayName = null;
         this.photoURL = null;
         this.loggedIn = false;
-        console.log("Logged in with firebase?", this.loggedIn);
-        console.log("Logged in with auth0?", this.auth.isAuthenticated());
         return
       }
-        //console.log("LOGGED IN", authState);
         this.loggedIn = true;
-        console.log("Logged in with firebase?", this.loggedIn);
-        console.log("Logged in with auth0?", this.auth.isAuthenticated());
-        // console.log("onFb", this.onFb);
         let userRef = this.af.database.object('/users/' + authState.uid);
-        console.log("Auth ?", authState.uid);
 
         if(authState.facebook){
           let userId = authState.facebook.uid;
-          //console.log("USER ID EXIST AND IS", authState.facebook.uid);
 
           userRef.subscribe(user => {
               let url = `https://graph.facebook.com/v2.8/${authState.facebook.uid}?fields=first_name,last_name&access_token=${user.accessToken}`;
