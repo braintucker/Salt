@@ -35,7 +35,7 @@
       [disabled]="form.invalid">Register</button>
     </form>
 
-  <button *ngIf="!auth0" (click)="show4 = !show4" class="btn btn-info">{{show4 ? 'Go Back' : 'Login'}}</button>
+  <button *ngIf="!auth0" (click)="show4 = !show4" class="btn btn-info btn-sm">{{show4 ? 'Go Back' : 'Login'}}</button>
   <!-- <button (click)="dummy()" class="btn btn-info">Dummy Login</button>
   <button (click)="test()" class="btn btn-info">test</button> -->
 
@@ -43,9 +43,9 @@
 
 
     <div *ngIf="show4" class="panel1">
-      <div class="panel1">
-        <button  class="btn btn-primary" (click)="loginFb()">Login with Facebook</button>
-        <button  class="btn btn-primary" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Login with Email'}}</button>
+      <div class="but-cont">
+        <button  class="btn btn-primary btn-sm" (click)="loginFb()">Login with Facebook</button>
+        <button  class="btn btn-primary btn-sm" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Login with Email'}}</button>
       </div>
       <form class="panel" *ngIf="show3" (ngSubmit)="login(form)" novalidate #form="ngForm">
         <div class="form-group">
@@ -71,7 +71,7 @@
     </div>
 
     <div *ngIf="!auth0" class="logout">
-      <button class="btn btn-danger" (click)="logout()">Logout</button>
+      <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
     </div>
     <div *ngIf="auth0" class="logout">
       <p class="alert alert-danger">Cannot login with Firebase, logged in with Auth0.</p>
