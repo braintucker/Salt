@@ -58,10 +58,12 @@ footer{
 .menu-bar{
   margin-top: 10%;
   margin: 10%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   cursor: pointer;
-  background: #D5D5D5;
+  color: #000;
+  font-size: 3.5em;
+  z-index: 9000;
 }
 .divider{
     display:inline-block;
@@ -171,37 +173,48 @@ footer{
   margin-top: 2%;
   margin-left: 30%;
 }
-@media all and (max-width: 2000px) { /* screen size until 700px */
+@media all and (max-width: 2000px) { /* screen size until 2000px */
   .img-cont{
     width: 1.5%;
   }
+  .menu-bar{
+    font-size: 1.5em;
+  }
 }
-@media all and (max-width: 1400px) { /* screen size until 700px */
+@media all and (max-width: 1400px) { /* screen size until 1400px */
   .img-cont{
     width: 2%;
   }
 }
-@media all and (max-width: 1200px) { /* screen size until 700px */
+@media all and (max-width: 1200px) { /* screen size until 1200px */
   .img-cont{
     width: 2.3%;
   }
+  .menu-bar{
+    font-size: 2em;
+  }
 }
-@media all and (max-width: 900px) { /* screen size until 700px */
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+  .menu-bar{
+    font-size: 3em;
+  }
+}
+@media all and (max-width: 900px) { /* screen size until 900px */
   .img-cont{
     width: 2.5%;
   }
 }
-@media all and (max-width: 800px) { /* screen size until 700px */
+@media all and (max-width: 800px) { /* screen size until 800px */
   .img-cont{
     width: 2.5%;
   }
 }
-@media all and (max-width: 700px) { /* screen size until 500px */
+@media all and (max-width: 700px) { /* screen size until 700px */
   .img-cont{
     width: 3%;
   }
 }
-@media all and (max-width: 600px) { /* screen size until 500px */
+@media all and (max-width: 600px) { /* screen size until 600px */
   .img-cont{
     width: 3%;
   }
@@ -211,7 +224,7 @@ footer{
     width: 4%;
   }
 }
-@media all and (max-width: 400px) { /* screen size until 500px */
+@media all and (max-width: 400px) { /* screen size until 400px */
   .img-cont{
     width: 5%;
   }

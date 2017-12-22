@@ -57,62 +57,16 @@
                 </div>
               <div class="nav-group">
 
+
                       <div class="inner-group">
-                        <div class="menu-bar" (click)="_toggleSidebar()">
-                          <div class="icon-bar"></div>
-                          <div class="icon-bar"></div>
-                          <div class="icon-bar"></div>
-                        </div>
+                          <span (click)="_toggleSidebar()" class="glyphicon glyphicon-menu-hamburger menu-bar"></span>
                         <div class="divider1"></div>
-                        <!-- <table>
-                          <td><button
-                            class="btn-cust"
-                            routerLink="/">
-                              <span class="glyphicon glyphicon-home"></span>Home
-                          </button></td>
-                          <td>
-                            <button
-                              class="btn-cust"
-                              *ngIf="!auth.isAuthenticated()"
-                              (click)="auth.login()">
-                                <span class="glyphicon glyphicon-log-in"></span>Log In
-                            </button>
-                          </td>
-                          <td>
-                            <button
-                              class="btn-cust"
-                              *ngIf="auth.isAuthenticated()"
-                              (click)="auth.logout()">
-                                <span class="glyphicon glyphicon-log-out"></span>Log Out
-                            </button>
-                          </td>
-                          <td>
-                            <button
-                              id="fbLog"
-                              class="btn-cust"
-                              *ngIf="!loggedIn"
-                              [routerLink]= "['/login']">
-                                <span class="glyphicon glyphicon-log-in"></span>Firebase Login
-                            </button>
-                          </td>
-                          <td>
-                            <button
-                              id="fbLog"
-                              class="btn-cust"
-                              *ngIf="loggedIn"
-                              (click)="logout()"
-                              [routerLink]= "['/home']">
-                                <span class="glyphicon glyphicon-log-out"></span>Firebase Logout
-                            </button>
-                          </td>
-                        </table> -->
                       </div>
                   </div>
               </div>
           </nav>
           </section>
           <section class="side-content">
-
                 <div class="alert alert-info">This site was made to act as an interactive resume.
                 I am continuously adding features and learning new skills at the same time. You can log in
                 using the sidebar login button with either Auth0 or Firebase.</div>
