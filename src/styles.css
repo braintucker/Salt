@@ -30,7 +30,7 @@ body{
 }
 @media all and (max-width: 1000px) { /* screen size until 1000px */
     body {
-        font-size: 12px; /* 1.2x default size */
+        font-size: 10px; /* 1.2x default size */
         }
     }
 @media all and (max-width: 700px) { /* screen size until 1000px */
