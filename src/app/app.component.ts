@@ -43,6 +43,10 @@ export class AppComponent {
         this.loggedIn = true;
     });
   }
+  // callApi() {
+  //   this.authHttp.get('http://localhost:8080/authorized')
+  //     .subscribe(res => console.log(res));
+  // }
   logout() {
     this.af.auth.logout();
     this.onFb = false;
