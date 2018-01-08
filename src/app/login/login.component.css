@@ -3,12 +3,7 @@ background: #96858F;
 background: #6D7993;
 background: #9099A2;
 background: #D5D5D5;*/
-.but-cont{
-  display: table;
-}
-.but-btn{
-  display: table-cell;
-}
+
 .panel
 {
   background-color: #D5D5D5;

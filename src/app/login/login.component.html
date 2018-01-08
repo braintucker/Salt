@@ -9,43 +9,18 @@
 </div>
 
 <div class="panel login-head">
-  <h3 >Login or Register with Firebase below!</h3>
+  <h3 >Login with Firebase below!</h3>
 </div>
 
 
 <div class="panel panel-default panel-login">
   <div class="panel-body panel1">
-    <form class="panel" *ngIf="show1" (ngSubmit)="register(form)" novalidate #form="ngForm">
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" #emailField="ngModel"
-        [(ngModel)]="email" name="email" required pattern=".+@.+" placeholder="Enter Email">
-        <p *ngIf="emailField.touched && emailField.invalid"
-          class="alert alert-danger">Please enter a valid email address</p>
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" #passwordField="ngModel"
-        [(ngModel)]="password" name="password" required placeholder="Enter Password">
-        <p *ngIf="passwordField.touched && passwordField.invalid"
-          class="alert alert-danger">Please enter a valid password</p>
-      </div>
-      <p>{{err}}</p>
-      <button type="submit" class="btn btn-info"
-      [disabled]="form.invalid">Register</button>
-    </form>
 
-  <button *ngIf="!auth0" (click)="show4 = !show4" class="btn btn-info btn-sm">{{show4 ? 'Go Back' : 'Login'}}</button>
-  <!-- <button (click)="dummy()" class="btn btn-info">Dummy Login</button>
-  <button (click)="test()" class="btn btn-info">test</button> -->
-
-
-
-
+  <button *ngIf="!auth0" (click)="show4 = !show4" class="">{{show4 ? 'Go Back' : 'Login'}}</button>
     <div *ngIf="show4" class="panel1">
-      <div class="but-cont">
-        <button  class="btn btn-primary btn-sm" (click)="loginFb()">Login with Facebook</button>
-        <button  class="btn btn-primary btn-sm" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Login with Email'}}</button>
+      <div>
+        <button  class="" (click)="loginFb()">Login with Facebook</button>
+        <button  class="" (click)="show3 = !show3">{{show3 ? 'Go Back' : 'Login with Email'}}</button>
       </div>
       <form class="panel" *ngIf="show3" (ngSubmit)="login(form)" novalidate #form="ngForm">
         <div class="form-group">
@@ -65,13 +40,13 @@
 
         <div *ngIf="err" class="alert alert-danger">{{err}}</div>
 
-        <button type="submit" class="btn btn-info"
+        <button type="submit" class=""
         [disabled]="form.invalid">Login</button>
       </form>
     </div>
 
     <div *ngIf="!auth0" class="logout">
-      <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
+      <button class="" (click)="logout()">Logout</button>
     </div>
     <div *ngIf="auth0" class="logout">
       <p class="alert alert-danger">Cannot login with Firebase, logged in with Auth0.</p>
