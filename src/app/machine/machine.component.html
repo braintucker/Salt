@@ -7,17 +7,28 @@
     <p>Data collected from firebase database</p>
     <img id="firebase" class="img-responsive img-cust" src="../assets/firebase.svg" />
   </div>
-
-  <div class="panel panel-body">
-    <div class="" >
-          <tbody>
-            <tr *ngFor="let p of properties; let i = index">
-              <td>{{ i+1 }}</td>
-              <td>{{ p.type }}</td>
-            </tr>
-          </tbody>
-    </div>
+  <div class="alert alert-danger">
+    <p>This page is not yet complete! Adding more detailed information and models as time progresses. Now it's just text.</p>
   </div>
+
+  <div class="panel panel-defaultf">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Type</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of properties; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{ p.type }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 
 
 
