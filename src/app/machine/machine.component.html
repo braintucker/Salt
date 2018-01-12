@@ -3,15 +3,19 @@
     <h1>Machine Learning</h1>
   </div>
 
-  <div>
-    <p>Insert Machine Learning stuff here</p>
+  <div class="info-cont">
+    <p>Data collected from firebase database</p>
+    <img id="firebase" class="img-responsive img-cust" src="../assets/firebase.svg" />
   </div>
 
   <div class="panel panel-body">
-    <div class="" *ngFor="let p of properties">
-          <ul>
-            <li>{{ p.type }}</li>
-          </ul>
+    <div class="" >
+          <tbody>
+            <tr *ngFor="let p of properties; let i = index">
+              <td>{{ i+1 }}</td>
+              <td>{{ p.type }}</td>
+            </tr>
+          </tbody>
     </div>
   </div>
 

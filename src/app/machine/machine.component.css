@@ -3,3 +3,12 @@ background: #96858F;
 background: #6D7993;
 background: #9099A2;
 background: #D5D5D5;*/
+.info-cont{
+
+  display: inline-flex;
+}
+.img-cust{
+  width: 2.5%;
+  height: 2.5%;
+  margin-left: 1%;
+}
