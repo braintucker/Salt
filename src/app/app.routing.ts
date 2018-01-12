@@ -4,6 +4,7 @@ import { Login } from './login/login.component';
 import { Home } from './home/home.component';
 import { Posts } from './posts/posts.component';
 import { Profile } from './profile/profile.component';
+import { Machine } from './machine/machine.component';
 import { Skills } from './skills/skills.component';
 
 
@@ -28,6 +29,10 @@ export const routing = RouterModule.forRoot([
   {
     path: 'login',
     component: Login
+  },
+  {
+    path: 'machine',
+    component: Machine
   },
   {
     path: 'skills',
