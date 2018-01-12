@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup, FormControl, NgForm } from '@angular/forms';
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Http } from '@angular/http';
 import { Auth } from '../auth.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import  'rxjs/add/operator/take'
 
 
 @Component({
@@ -13,9 +16,13 @@ import { Auth } from '../auth.service';
 export class Machine implements OnInit {
 
   loggedIn;
-  logAuth;
+  properties;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
+
+    af.database.list('/properties').subscribe( x => {
+      this.properties = x;
+    });
   }
 
   ngOnInit() {

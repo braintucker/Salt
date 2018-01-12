@@ -16,7 +16,6 @@ export class Posts implements OnInit {
   loggedIn;
   isBrian;
   articles;
-  exists;
   articleId;
 
 

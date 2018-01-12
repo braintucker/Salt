@@ -13,7 +13,6 @@ import { Auth } from '../auth.service';
 export class Skills implements OnInit {
 
   loggedIn;
-  logAuth;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth){
   }
