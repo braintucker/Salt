@@ -12,23 +12,24 @@
     width: 100%
   }
   .p1{
-      background: #6D7993;
+      background: #D5D5D5;
       margin-right: 3%;
-      padding: 1%;
+      padding-left: 1%;
       border-radius: 5px;
-      color: #fff;
   }
   .p11{
       background: #D5D5D5;
       margin-right: 3%;
       padding-left: 1%;
       border-radius: 5px;
+      width: 100%;
   }
   .p2{
       background: #D5D5D5;
       margin-right: 4%;
       padding-left: 1%;
       border-radius: 5px;
+
   }
   .p3{
       background: #6D7993;
@@ -36,6 +37,7 @@
       margin-right: 4%;
       padding-left: 2%;
       border-radius: 5px;
+      width: 100%;
   }
   .panel-cust{
     background: #e6e6e6;
