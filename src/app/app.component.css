@@ -235,9 +235,31 @@ span{
   .img-cont{
     width: 4%;
   }
+  .foot-cust{
+    font-size: 10px;
+  }
 }
 @media all and (max-width: 400px) { /* screen size until 400px */
   .img-cont{
     width: 5%;
+  }
+  .foot-cust{
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 300px) { /* screen size until 300px */
+  .img-cont{
+    width: 5%;
+  }
+  .foot-cust{
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 200px) { /* screen size until 200px */
+  .img-cont{
+    width: 5%;
+  }
+  .foot-cust{
+    font-size: 9px;
   }
 }
