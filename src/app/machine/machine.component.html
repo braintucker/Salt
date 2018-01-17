@@ -17,6 +17,8 @@
         <tr>
           <th>#</th>
           <th>Type</th>
+          <th>What?</th>
+          <th>Graph</th>
         </tr>
 
       </thead>
@@ -24,6 +26,8 @@
         <tr *ngFor="let p of properties; let i = index">
           <td>{{ i+1 }}</td>
           <td>{{ p.type }}</td>
+          <td>Enter description</td>
+          <td>Just a placeholder<img class="img-responsive img-cont" src="../assets/firebase.svg" /></td>
         </tr>
       </tbody>
     </table>

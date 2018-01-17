@@ -4,8 +4,8 @@ background: #6D7993;
 background: #9099A2;
 background: #D5D5D5;*/
 .info-cont{
-
   display: inline-flex;
+  color: #D5D5D5;
 }
 .img-cust{
   width: 2.5%;
@@ -19,4 +19,8 @@ background: #D5D5D5;*/
   padding-right: 1%;
   padding-bottom: .1%;
   padding-top: 2%;
+}
+
+.img-cont{
+  width: 5%;
 }
