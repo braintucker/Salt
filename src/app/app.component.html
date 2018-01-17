@@ -58,18 +58,16 @@
                   </div>
                   <a class=" header-name navbar-brand" href="#">Brian Tucker</a>
                 </div>
-              <div class="nav-group">
-
-
-                      <div class="inner-group">
-                          <span (click)="_toggleSidebar()" class="glyphicon glyphicon-menu-hamburger menu-bar"></span>
-                        <div class="divider1"></div>
-                      </div>
-                  </div>
-              </div>
+                <div class="nav-group">
+                        <div class="inner-group">
+                            <span (click)="_toggleSidebar()" class="glyphicon glyphicon-menu-hamburger menu-bar"></span>
+                          <div class="divider1"></div>
+                        </div>
+                </div>
+            </div>
           </nav>
           </section>
-          <section class="side-content">
+          <section (click)="close()" class="side-content">
                 <div class="alert alert-info">This site was made to act as an interactive resume.
                 I am continuously adding features and learning new skills at the same time. You can log in
                 using the sidebar login button with either Auth0 or Firebase.</div>
@@ -79,7 +77,7 @@
           </section>
           <footer>
                 <div class="foot-cust">
-                  <label>Powered by :</label>
+                  <label>Assembled with :</label>
                   <img id="ang" class="img-cont" src="../assets/angular-icon.svg" />
                 </div>
 

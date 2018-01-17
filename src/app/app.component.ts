@@ -52,6 +52,9 @@ export class AppComponent {
     this.onFb = false;
     this.loggedIn = false;
   }
+  close() {
+    this._opened = false;
+  }
   _toggleSidebar() {
     this._opened = !this._opened;
   }
