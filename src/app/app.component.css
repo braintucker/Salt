@@ -159,6 +159,10 @@ label{
 .panel1{
   background-color: #6D7993;
   margin-top: 10px;
+  margin-bottom: 3.5%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px rgba(0,0,0,.05);
 }
 .panel-default
 {
