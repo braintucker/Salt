@@ -14,7 +14,9 @@
   .p1{
       background: #D5D5D5;
       margin-right: 3%;
-      padding-left: 1%;
+      padding-left: 2%;
+      padding-top: 1.5%;
+      padding-bottom: 1px;
       border-radius: 5px;
   }
   .p11{
@@ -27,7 +29,9 @@
   .p2{
       background: #D5D5D5;
       margin-right: 4%;
-      padding-left: 1%;
+      padding-left: 2%;
+      padding-top: 1.5%;
+      padding-bottom: 1px;
       border-radius: 5px;
 
   }
@@ -65,6 +69,7 @@
   }
   .text-cont{
     position: absolute;
+    font-weight: bold;
     top: 0;
     right: 0;
     max-width: 50%;
@@ -72,6 +77,7 @@
   }
   .text-cont1{
     position: absolute;
+    font-weight: bold;
     bottom: 0;
     right: 10%;
     max-width: 35%;
@@ -81,8 +87,6 @@
     display: block;
     margin: 0 auto;
   }
-
-
   @media all and (max-width: 2000px) { /* screen size until 1200px */
       .text-cont{
         max-width: 50%;

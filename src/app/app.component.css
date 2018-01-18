@@ -30,6 +30,9 @@ ng-sidebar-container{
 span{
   padding-right: 10%;
 }
+label{
+  color: #D5D5D5;
+}
 #fbLog{
   width: auto;
   margin: 1%;
