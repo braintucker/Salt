@@ -4,7 +4,7 @@
   background: #9099A2;
   background: #D5D5D5;*/
 
-  
+
   .panel1{
     background-color: #6D7993;
     /*text-align: center;*/
@@ -105,12 +105,21 @@
       .text-cont2{
         display: none;
       }
+      .text-cont2{
+        display: none;
+      }
+      .cnt-sm{
+        display: none;
+      }
   }
   @media all and (max-width: 1200px) { /* screen size until 1200px */
       .text-cont{
         max-width: 50%;
       }
       .text-cont2{
+        display: none;
+      }
+      .cnt-sm{
         display: none;
       }
   }
@@ -121,8 +130,22 @@
     .text-cont2{
       display: none;
     }
-      }
+    .cnt-sm{
+      display: none;
+    }
+  }
   @media all and (max-width: 700px) { /* screen size until 700px */
+    .img-lg{
+      display: none;
+    }
+    .cnt-sm{
+      display: block;
+      width: 100%;
+      background: #fff;
+    }
+    .txt-lg{
+      display: none;
+    }
     .text-cont{
       max-width: 50%;
       display: none;
@@ -132,9 +155,22 @@
     }
     .text-cont2{
       display: block;
+      padding-top: 1%;
+      padding-left: 3%;
+      font-size: 12px;
     }
       }
   @media all and (max-width: 500px) { /* screen size until 500px */
+    .img-lg{
+      display: none;
+    }
+    .cnt-sm{
+      width: 100%;
+      background: #fff;
+    }
+    .txt-lg{
+      display: none;
+    }
     .text-cont{
       max-width: 40%;
       display: none;
