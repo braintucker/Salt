@@ -66,7 +66,6 @@ export class Posts implements OnInit {
       title: title
     });
 
-
     // console.log("this is the title", title);
     // console.log("this is the date", date);
     // console.log("this is the post", post);
