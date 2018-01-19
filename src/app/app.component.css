@@ -15,7 +15,7 @@ footer{
     width: 100%;
     height: 2.9%;
     background: #6D7993;
-    border: 2px solid #acb3b9;
+    border: 1px solid #acb3b9;
     color: white;
     align-items: center;
     display: inline-flex;
@@ -144,7 +144,7 @@ label{
 }
 .navbar{
   background: #6D7993;
-  border: 2px solid #acb3b9;
+  border: 1px solid #acb3b9;
   position: relative;
 }
 .nav-group{
