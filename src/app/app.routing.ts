@@ -1,5 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { Callback } from './callback/callback.component';
+import { Connect } from './connect/connect.component';
 import { Login } from './login/login.component';
 import { Home } from './home/home.component';
 import { Posts } from './posts/posts.component';
@@ -17,6 +18,10 @@ export const routing = RouterModule.forRoot([
   {
     path: 'callback',
     component: Callback
+  },
+  {
+    path: 'connect',
+    component: Connect
   },
   {
     path: 'posts',
