@@ -9,6 +9,7 @@ import { routing } from './app.routing';
 import { SidebarModule } from 'ng-sidebar';
 
 import { AppComponent } from './app.component';
+import { Android } from './android/android.component';
 import { Callback } from './callback/callback.component';
 import { Connect } from './connect/connect.component';
 import { Home } from './home/home.component';
@@ -33,7 +34,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills
+    AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills
   ],
   imports: [
     BrowserModule,
@@ -41,6 +42,6 @@ export const firebaseConfig = {
     FormsModule, HttpModule, SidebarModule.forRoot(), routing
   ],
   providers: [Auth, {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills]
+  bootstrap: [AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills]
 })
 export class AppModule { }

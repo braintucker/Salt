@@ -4,7 +4,10 @@
 <div class="alert alert-danger" *ngIf="!loggedIn && !auth.isAuthenticated()">
   <strong>LOGIN ERROR</strong> You must be logged in to view blog
 </div>
-
+<div class="info-cont">
+  <p>Data collected from firebase database</p>
+  <img id="firebase" class="img-responsive img-cust" src="../assets/firebase.svg" />
+</div>
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
   <div class="post-cont">
     <article *ngFor="let a of articles" class="article-cust">

@@ -10,7 +10,6 @@
     margin: 0;
     margin-bottom: 1%;
     color: #D5D5D5;
-    text-shadow: -.5px 0 #96858F, 0 .5px #96858F, .5px 0 #96858F, 0 -.5px #96858F;
   }
 
   h3{
@@ -79,4 +78,13 @@
     margin-top: 1%;
     padding-left: 1%;
     max-width: 15%;
+  }
+  .info-cont{
+    display: inline-flex;
+    color: #D5D5D5;
+  }
+  .img-cust{
+    width: 2.5%;
+    height: 2.5%;
+    margin-left: 1%;
   }
