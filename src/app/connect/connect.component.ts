@@ -4,6 +4,7 @@ import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
 import { Http } from '@angular/http';
 import { Auth } from '../auth.service';
 import { ConnectService } from './connect.service';
+import { Observable } from 'rxjs/Rx';
 
 
 
@@ -15,13 +16,16 @@ import { ConnectService } from './connect.service';
 export class Connect implements OnInit {
 
   loggedIn;
+  posts;
 
   constructor(private af: AngularFire, private http: Http, private auth: Auth, private connectService: ConnectService){
   }
 
-  information = {};
 
   ngOnInit() {
+
+    this.getInfo();
+
     this.af.auth.subscribe(authState => {
       if(!authState) {
         this.loggedIn = false;
@@ -31,13 +35,12 @@ export class Connect implements OnInit {
     });
   }
 
-  apiTest() {
+  getInfo() {
     this.connectService.getInfo()
-      .subscribe(data => this.information ={
-        userId: data['userId'],
-        id: data['id'],
-        title: data['title'],
-        body: data['body']
-      });
+      .subscribe(
+        resArray => this.posts = resArray,
+        error => console.log("Error :: " + error)
+      )
   }
+
 }

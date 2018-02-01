@@ -1,13 +1,34 @@
 <div>
   <div>
-    <h1>Put the API Data here</h1>
-    <div>
-      <button (click)="apiTest()">Click me</button>
-      <p>{{ information.userId }}</p>
-      <p>{{ information.id }}</p>
-      <p>{{ information.title }}</p>
-      <p>{{ information.body }}</p>
+    <div class="head-cont">
+      <h1>API Calls</h1>
+    </div>
+    <p>This is test data pulled from <a href="https://jsonplaceholder.typicode.com">here</a></p>
 
+
+    <div class="panel panel-body">
+      <div class="panel-cust">
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>User Id</th>
+            <th>Id</th>
+            <th>title</th>
+            <th>body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of posts">
+            <td>{{ p.userId }}</td>
+            <td>{{ p.id }}</td>
+            <td>{{ p.title }}</td>
+            <td>{{ p.body }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="getInfo()">Click me</button>
+      </div>
     </div>
   </div>
 </div>
