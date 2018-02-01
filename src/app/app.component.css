@@ -177,6 +177,7 @@ label{
   background-color: #6D7993;
   height: 100vh;
   padding: 2em 1em;
+  border: 1px solid #acb3b9;
 }
 .side-cont{
   background-color: #e6e6e6;
