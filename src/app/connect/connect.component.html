@@ -8,26 +8,25 @@
 
     <div class="panel panel-body">
       <div class="panel-cust">
-
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>User Id</th>
-            <th>Id</th>
-            <th>title</th>
-            <th>body</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let p of posts">
-            <td>{{ p.userId }}</td>
-            <td>{{ p.id }}</td>
-            <td>{{ p.title }}</td>
-            <td>{{ p.body }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button (click)="getInfo()">Click me</button>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>User Id</th>
+              <th>Id</th>
+              <th>title</th>
+              <th>body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of posts">
+              <td>{{ p.userId }}</td>
+              <td>{{ p.id }}</td>
+              <td>{{ p.title }}</td>
+              <td>{{ p.body }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click)="getInfo()">Click me</button>
       </div>
     </div>
   </div>

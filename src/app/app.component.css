@@ -217,6 +217,9 @@ label{
   .menu-bar{
     font-size: 3em;
   }
+  .sidebar-cust{
+    font-size: 14px;
+  }
 }
 @media all and (max-width: 900px) { /* screen size until 900px */
   .img-cont{

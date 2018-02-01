@@ -6,6 +6,8 @@
 
 .panel-cust{
   background: #D5D5D5;
+  height: 60vh;
+  overflow: auto;
 }
 .head-cont{
   color: #D5D5D5;
