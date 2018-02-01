@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { AngularFireModule } from 'angularfire2';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 
@@ -21,6 +22,7 @@ import { Profile } from './profile/profile.component';
 import { Skills } from './skills/skills.component';
 
 import { Auth } from './auth.service';
+import { ConnectService } from './connect/connect.service';
 
 
 export const firebaseConfig = {
@@ -39,9 +41,9 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    FormsModule, HttpModule, SidebarModule.forRoot(), routing
+    FormsModule, HttpClientModule, HttpModule, SidebarModule.forRoot(), routing
   ],
-  providers: [Auth, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [Auth, ConnectService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills]
 })
 export class AppModule { }
