@@ -1,12 +1,12 @@
 <div class="head-cont">
   <h1>Blog</h1>
 </div>
-<div class="alert alert-danger" *ngIf="!loggedIn && !auth.isAuthenticated()">
-  <strong>LOGIN ERROR</strong> You must be logged in to view blog
-</div>
 <div class="info-cont">
   <p>Data collected from firebase database</p>
   <img id="firebase" class="img-responsive img-cust" src="../assets/firebase.svg" />
+</div>
+<div class="alert alert-danger" *ngIf="!loggedIn && !auth.isAuthenticated()">
+  <strong>LOGIN ERROR</strong> You must be logged in to view blog
 </div>
 <div *ngIf="loggedIn || auth.isAuthenticated()" class="panel panel-body">
   <div class="post-cont">
