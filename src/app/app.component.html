@@ -35,7 +35,7 @@
             </button>
             <div class="side-cont">
               <a [routerLink]= "['/home']">Home <span class="glyphicon glyphicon-home"></span></a>
-              <a [routerLink]= "['']">Android <span class="glyphicon glyphicon-phone"></span></a>
+              <a [routerLink]= "['/android']">Android <span class="glyphicon glyphicon-phone"></span></a>
               <a [routerLink]= "['/posts']">Blog <span class="glyphicon glyphicon-file"></span></a>
               <a [routerLink]= "['/machine']">Machine Learning <span class="glyphicon glyphicon-modal-window"></span></a>
               <a [routerLink]= "['/connect']">RESTful APIs <span class="glyphicon glyphicon-flash"></span></a>
@@ -67,6 +67,9 @@
           </nav>
           </section>
           <section (click)="close()" class="side-content">
+            <div class="alert alert-success center">
+              I was hired! Not looking for work at the moment.
+            </div>
                 <div class="alert alert-info">This site was made to act as an interactive resume.
                   I am continuously adding features and learning new skills. You can log in
                   using the sidebar login button with either Auth0 or Firebase. Find out what I built this with <a id="tools" [routerLink]= "['/skills']">here</a>

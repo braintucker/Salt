@@ -3,6 +3,10 @@
   background: #6D7993;
   background: #9099A2;
   background: #D5D5D5;*/
+  .panel-body{
+    background-color: #D5D5D5;
+    width: 100%
+  }
   .info-cont{
     display: inline-flex;
     color: #D5D5D5;

@@ -5,6 +5,11 @@
   background: #9099A2;
   background: #D5D5D5;*/
 
+  .center{
+    text-align: center;
+    font-size: 14px;
+  }
+
 a{
   display: block;
 }
