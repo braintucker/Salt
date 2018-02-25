@@ -8,6 +8,8 @@ import { Posts } from './posts/posts.component';
 import { Profile } from './profile/profile.component';
 import { Machine } from './machine/machine.component';
 import { Skills } from './skills/skills.component';
+import { StarWars } from './star-wars/star-wars.component';
+
 
 
 
@@ -47,6 +49,10 @@ export const routing = RouterModule.forRoot([
   {
     path: 'skills',
     component: Skills
+  },
+  {
+    path: 'star-wars',
+    component: StarWars
   },
   {
     path: '',

@@ -1,0 +1,31 @@
+  /*COLORS:
+  background: #96858F;
+  background: #6D7993;
+  background: #9099A2;
+  background: #D5D5D5;*/
+a{
+  font-weight: bold;
+}
+.panel-cust{
+  background: #D5D5D5;
+  height: 20vh;
+  overflow: auto;
+  text-align: center;
+}
+.head-cont{
+  color: #D5D5D5;
+  border-radius: 3px;
+  margin-bottom: 1%;
+  padding-right: 1%;
+  padding-bottom: .1%;
+  padding-top: 2%;
+}
+p{
+  text-align: center;
+  font-size: 10px;
+  padding: .4%;
+  border-radius: 3px;
+}
+h2{
+  padding-top: 6%;
+}

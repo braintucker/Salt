@@ -20,6 +20,7 @@ import { Machine } from './machine/machine.component';
 import { Posts } from './posts/posts.component';
 import { Profile } from './profile/profile.component';
 import { Skills } from './skills/skills.component';
+import { StarWars } from './star-wars/star-wars.component';
 
 import { Auth } from './auth.service';
 import { ConnectService } from './connect/connect.service';
@@ -36,7 +37,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills
+    AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills, StarWars
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,6 @@ export const firebaseConfig = {
     FormsModule, HttpClientModule, HttpModule, SidebarModule.forRoot(), routing
   ],
   providers: [Auth, ConnectService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills]
+  bootstrap: [AppComponent, Android, Callback, Connect, Home, LoggedIn, Login, Machine, Posts, Profile, Skills, StarWars]
 })
 export class AppModule { }
